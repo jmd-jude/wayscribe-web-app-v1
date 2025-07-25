@@ -16,6 +16,22 @@ const __dirname = path.dirname(__filename);
 import { DOMAIN_CONTEXT } from './domain-context.js';
 
 const app = express();
+
+// Debug: Check if API key is loaded
+console.log('Environment check:');
+console.log('- NODE_ENV:', process.env.NODE_ENV);
+console.log('- PORT:', process.env.PORT);
+console.log('- API Key present:', !!process.env.ANTHROPIC_API_KEY);
+console.log('- API Key length:', process.env.ANTHROPIC_API_KEY?.length);
+console.log('- API Key first 10 chars:', process.env.ANTHROPIC_API_KEY?.substring(0, 10));
+console.log('- All env keys:', Object.keys(process.env).filter(k => !k.startsWith('npm_')).join(', '));
+
+// Check if the key is undefined or empty
+if (!process.env.ANTHROPIC_API_KEY) {
+  console.error('CRITICAL: ANTHROPIC_API_KEY is not set!');
+  console.error('Please check Railway environment variables');
+}
+
 const anthropic = new Anthropic({ 
   apiKey: process.env.ANTHROPIC_API_KEY 
 });
