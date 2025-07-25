@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBD Nutrition Navigator Consultation</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div id="consultation-container">
+    <div id="header">
+      <h1>IBD Nutrition Navigator</h1>
+      <p class="tagline">Evidence-based nutrition therapy for IBD patients</p>
+    </div>
+    
+    <div id="messages-container">
+      <div id="messages"></div>
+    </div>
+    
+    <div id="input-area">
+      <textarea 
+        id="user-input" 
+        placeholder="Share your IBD situation and nutritional goals..."
+        rows="3"
+      ></textarea>
+      <button id="send-button" onclick="sendMessage()">
+        <span class="button-text">Send</span>
+        <span class="button-loading" style="display: none;">...</span>
+      </button>
+    </div>
+    
+    <div id="error-banner" class="error-banner" style="display: none;">
+      <span class="error-text"></span>
+      <button onclick="hideError()">×</button>
+    </div>
+  </div>
+
+  <script>
+    let sessionId = null;
+    let isProcessing = false;
+    let messageIdCounter = 0;
+
+    // Initialize consultation on load
+    window.onload = async function() {
+      await initializeConsultation();
+    };
+
+    async function initializeConsultation() {
+      try {
+        showLoading();
+        const response = await fetch('/api/session/init', { 
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        sessionId = data.sessionId;
+        displayMessage(data.welcome, 'assistant');
+        hideLoading();
+        
+        // Focus input after welcome
+        document.getElementById('user-input').focus();
+        
+      } catch (error) {
+        console.error('Error starting consultation:', error);
+        hideLoading();
+        showError('Failed to start consultation. Please refresh the page.');
+      }
+    }
+
+    async function sendMessage() {
+      if (isProcessing || !sessionId) return;
+      
+      const input = document.getElementById('user-input');
+      const message = input.value.trim();
+      if (!message) return;
+      
+      isProcessing = true;
+      updateSendButton(true);
+      input.value = '';
+      displayMessage(message, 'user');
+      
+      try {
+        const response = await fetch(`/api/consult/${sessionId}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message })
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        displayMessage(data.response, 'assistant');
+        
+        // Log token usage for monitoring
+        if (data.usage) {
+          console.log('Token usage:', data.usage);
+        }
+        
+      } catch (error) {
+        console.error('Error processing request:', error);
+        showError('Failed to process your message. Please try again.');
+      } finally {
+        isProcessing = false;
+        updateSendButton(false);
+        input.focus();
+      }
+    }
+
+    function displayMessage(content, role) {
+      const messagesDiv = document.getElementById('messages');
+      const messageId = `message-${messageIdCounter++}`;
+      
+      if (role === 'assistant') {
+        // Check for documents/artifacts in the content
+        const { mainText, documents } = extractDocuments(content);
+        
+        // Display main conversation text
+        if (mainText) {
+          const messageDiv = createMessageElement(mainText, role, messageId);
+          messagesDiv.appendChild(messageDiv);
+        }
+        
+        // Display documents in separate panels
+        documents.forEach((doc, index) => {
+          const docDiv = createDocumentElement(doc, `${messageId}-doc-${index}`);
+          messagesDiv.appendChild(docDiv);
+        });
+      } else {
+        // User messages display normally
+        const messageDiv = createMessageElement(content, role, messageId);
+        messagesDiv.appendChild(messageDiv);
+      }
+      
+      // Smooth scroll to bottom
+      messagesDiv.scrollTo({
+        top: messagesDiv.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+
+    function createMessageElement(content, role, id) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${role}`;
+      messageDiv.id = id;
+      
+      // Add role label
+      const roleLabel = document.createElement('div');
+      roleLabel.className = 'message-role';
+      roleLabel.textContent = role === 'user' ? 'You' : 'IBD Navigator';
+      messageDiv.appendChild(roleLabel);
+      
+      // Add content
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'message-content';
+      
+      if (role === 'assistant') {
+        contentDiv.innerHTML = marked.parse(content);
+      } else {
+        contentDiv.textContent = content;
+      }
+      
+      messageDiv.appendChild(contentDiv);
+      return messageDiv;
+    }
+
+    function extractDocuments(response) {
+      // Pattern to match markdown documents (## headers followed by substantial content)
+      const docPattern = /^## .+\n[\s\S]+?(?=\n## |$)/gm;
+      const documents = [];
+      
+      // Look for document-like sections
+      const matches = response.match(docPattern);
+      if (matches) {
+        matches.forEach(match => {
+          // Only treat as document if it has substantial content (more than 500 chars)
+          if (match.length > 500 && (
+            match.includes('**Date:**') || 
+            match.includes('**Patient:**') ||
+            match.includes('Phase') ||
+            match.includes('Week') ||
+            match.includes('Recommendation') ||
+            match.includes('Summary')
+          )) {
+            documents.push(match);
+          }
+        });
+      }
+      
+      // Remove extracted documents from main text
+      let mainText = response;
+      documents.forEach(doc => {
+        mainText = mainText.replace(doc, '');
+      });
+      
+      return { mainText: mainText.trim(), documents };
+    }
+
+    function createDocumentElement(docContent, id) {
+      const docDiv = document.createElement('div');
+      docDiv.className = 'document-artifact';
+      docDiv.id = id;
+      
+      // Extract title from first line
+      const lines = docContent.split('\n');
+      const title = lines[0].replace(/^#+\s*/, '').trim();
+      
+      docDiv.innerHTML = `
+        <div class="document-header">
+          <span class="document-icon">📄</span>
+          <span class="document-title">${title}</span>
+          <button onclick="copyDocument('${id}')" class="doc-action">Copy</button>
+          <button onclick="downloadDocument('${id}', '${title}')" class="doc-action">Download</button>
+        </div>
+        <div class="document-content">
+          ${marked.parse(docContent)}
+        </div>
+      `;
+      return docDiv;
+    }
+
+    function copyDocument(docId) {
+      const docElement = document.getElementById(docId);
+      const content = docElement.querySelector('.document-content').innerText;
+      
+      navigator.clipboard.writeText(content).then(() => {
+        // Show feedback
+        const button = docElement.querySelector('button[onclick*="copyDocument"]');
+        const originalText = button.textContent;
+        button.textContent = 'Copied!';
+        setTimeout(() => {
+          button.textContent = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+        showError('Failed to copy to clipboard');
+      });
+    }
+
+    function downloadDocument(docId, title) {
+      const docElement = document.getElementById(docId);
+      const content = docElement.querySelector('.document-content').innerText;
+      
+      const blob = new Blob([content], { type: 'text/markdown' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.md`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function updateSendButton(loading) {
+      const button = document.getElementById('send-button');
+      const buttonText = button.querySelector('.button-text');
+      const buttonLoading = button.querySelector('.button-loading');
+      
+      if (loading) {
+        buttonText.style.display = 'none';
+        buttonLoading.style.display = 'inline';
+        button.disabled = true;
+      } else {
+        buttonText.style.display = 'inline';
+        buttonLoading.style.display = 'none';
+        button.disabled = false;
+      }
+    }
+
+    function showLoading() {
+      const messagesDiv = document.getElementById('messages');
+      const loadingDiv = document.createElement('div');
+      loadingDiv.className = 'message assistant loading';
+      loadingDiv.id = 'loading-message';
+      loadingDiv.innerHTML = `
+        <div class="message-role">IBD Navigator</div>
+        <div class="message-content">
+          <div class="loading-dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      `;
+      messagesDiv.appendChild(loadingDiv);
+    }
+
+    function hideLoading() {
+      const loadingDiv = document.getElementById('loading-message');
+      if (loadingDiv) {
+        loadingDiv.remove();
+      }
+    }
+
+    function showError(message) {
+      const errorBanner = document.getElementById('error-banner');
+      const errorText = errorBanner.querySelector('.error-text');
+      errorText.textContent = message;
+      errorBanner.style.display = 'flex';
+      
+      // Auto-hide after 5 seconds
+      setTimeout(hideError, 5000);
+    }
+
+    function hideError() {
+      const errorBanner = document.getElementById('error-banner');
+      errorBanner.style.display = 'none';
+    }
+
+    // Enter key to send (Shift+Enter for new line)
+    document.getElementById('user-input').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    // Auto-resize textarea
+    const textarea = document.getElementById('user-input');
+    textarea.addEventListener('input', function() {
+      this.style.height = 'auto';
+      this.style.height = Math.min(this.scrollHeight, 150) + 'px';
+    });
+  </script>
+</body>
+</html>

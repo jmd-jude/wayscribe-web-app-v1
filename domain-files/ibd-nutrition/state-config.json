@@ -1,0 +1,20 @@
+{
+  "domain": "ibd-nutrition",
+  "track_elements": {
+    "user_profile": {},
+    "journey_state": {}
+  },
+  "disease_activity": ["flare", "improving", "remission"],
+  "dietary_approach": "string",
+  "checkpoint_intervals": {
+    "initial": "3_weeks",
+    "standard": "6_weeks",
+    "stable": "12_weeks"
+  },
+  "clinical_markers": {
+    "crp": "number",
+    "calprotectin": "number",
+    "weight": "number",
+    "qol_score": "number"
+  }
+}

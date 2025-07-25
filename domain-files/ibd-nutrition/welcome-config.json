@@ -1,0 +1,11 @@
+{
+  "domain": "ibd-nutrition",
+  "welcome_message": "Welcome to the IBD Nutrition Navigator. I'll help you find evidence-based nutrition therapy that works alongside your medications to improve your quality of life. Remember: there's an option for every patient.",
+  "expert_intro": "I apply the IBD Nutrition Navigator™ 5-step framework to help you find sustainable dietary approaches that match your disease state, goals, and resources.",
+  "immediate_options": [
+    "🔥 'I'm in a flare' - Get gentle nutrition guidance for active disease",
+    "🌱 'I'm in remission' - Explore maintenance and optimization options",
+    "🎯 'Can diet reduce my medications?' - Discuss therapeutic diet potential"
+  ],
+  "signature_element": "An option for every patient - from simple education to intensive therapy."
+}

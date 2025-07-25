@@ -1,0 +1,25 @@
+{
+  "domain": "ibd-nutrition",
+  "mode": "structured",
+  "welcome_message": "I'll help you navigate nutrition therapy options for your IBD journey.",
+  "required_documents": [],
+  "initial_assessment": {
+    "required_information": [
+      "disease_type",
+      "current_medications",
+      "recent_labs",
+      "current_symptoms"
+    ],
+    "optional_information": [
+      "dietary_history",
+      "food_preferences",
+      "cultural_considerations"
+    ]
+  },
+  "document_types": [
+    "medical_records",
+    "lab_results",
+    "food_diary",
+    "symptom_log"
+  ]
+}

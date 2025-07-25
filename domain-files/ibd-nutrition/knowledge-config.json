@@ -1,0 +1,17 @@
+{
+  "domain": "ibd-nutrition",
+  "knowledge_files": [
+    {
+      "file": "ibd-nutrition-navigator.md",
+      "name": "IBD Nutrition Navigator Knowledge Base",
+      "hint": "Evidence-based nutrition therapy protocols for Crohn's disease and ulcerative colitis management"
+    }
+  ],
+  "instructions": [
+    {
+      "file": "ibd-nutrition-system-instructions.md",
+      "name": "IBD Nutrition Consultation Methodology",
+      "hint": "How to personalize dietary approaches based on disease state, medications, and patient feasibility"
+    }
+  ]
+}

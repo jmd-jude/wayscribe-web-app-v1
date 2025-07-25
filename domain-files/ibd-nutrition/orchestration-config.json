@@ -1,0 +1,31 @@
+{
+  "domain": "ibd-nutrition",
+  "orchestration_behavior": {
+    "information_gathering_intensity": 8,
+    "guidance_directiveness": 6,
+    "conversation_pacing": 7
+  },
+  "consultation_phases": [
+    "disease_state_assessment",
+    "nutritional_status_evaluation",
+    "goal_determination",
+    "feasibility_assessment",
+    "dietary_options_presentation",
+    "selection_guidance",
+    "implementation_planning",
+    "monitoring_setup",
+    "progress_tracking",
+    "adjustment_consultation"
+  ],
+  "entry_routing": "disease_first",
+  "tracking_priorities": {
+    "inflammatory_markers": 0.30,
+    "nutritional_status": 0.25,
+    "quality_of_life": 0.25,
+    "goal_achievement": 0.20
+  },
+  "reassessment_triggers": {
+    "time_based": "12_weeks",
+    "event_based": ["flare", "hospitalization", "medication_change", "life_change"]
+  }
+}

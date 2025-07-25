@@ -1,0 +1,26 @@
+{
+  "domain": "ibd-nutrition",
+  "output_format": "markdown",
+  "artifact_types": [
+    {
+      "file": "personalized-nutrition-plan.md",
+      "name": "personalized-nutrition-plan",
+      "hint": "Comprehensive therapy plan with phased implementation"
+    },
+    {
+      "file": "weekly-meal-plan.md",
+      "name": "weekly-meal-plan",
+      "hint": "7-day meals with recipes and shopping list"
+    },
+    {
+      "file": "progress-summary.md",
+      "name": "progress-summary",
+      "hint": "Clinical markers and symptom tracking report"
+    },
+    {
+      "file": "educational-materials.md",
+      "name": "educational-materials",
+      "hint": "Diet approach guide with troubleshooting tips"
+    }
+  ]
+}

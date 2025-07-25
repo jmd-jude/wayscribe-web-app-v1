@@ -1,0 +1,17 @@
+{
+  "domain": "ibd-nutrition",
+  "objective": "Ensure patients leave understanding that nutritional healing is possible for their specific condition, equipped with concrete next steps to discuss with their healthcare provider",
+  "synthesis_approach": "disease_state_first",
+  "personalization_factors": [
+    "disease_type",
+    "disease_location",
+    "current_symptoms",
+    "nutritional_deficiencies",
+    "support_system",
+    "time_availability"
+  ],
+  "personalization_settings": {
+    "language_matching": "mirror_user_patterns",
+    "native_language": "offer_when_struggling"
+  }
+}
