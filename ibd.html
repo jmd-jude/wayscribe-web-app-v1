@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBD Nutrition Navigator™</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background-color: #8BC34A;
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-color: #F5F5DC;
+            padding: 4rem 0;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: #8E44AD;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .hero-content h2 {
+            font-size: 2rem;
+            color: #27AE60;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .hero-content .label {
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .important-notes {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            border-left: 4px solid #8E44AD;
+        }
+
+        .important-notes p {
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .important-notes strong {
+            font-weight: 700;
+        }
+
+        .important-notes a {
+            color: #8E44AD;
+            text-decoration: underline;
+        }
+
+        /* Navigator Wheel Placeholder */
+        .navigator-wheel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #8E44AD, #E91E63, #FF9800, #4CAF50);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin: 0 auto;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        /* Main Content Section */
+        .main-section {
+            background-color: #F5F5DC;
+            padding: 4rem 0;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Interactive Tool Container */
+        .tool-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .tool-placeholder {
+            background-color: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 8px;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #6c757d;
+        }
+
+        .tool-placeholder h3 {
+            margin-bottom: 1rem;
+            color: #8E44AD;
+        }
+
+        /* Your iframe will replace this placeholder */
+        .demo-iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .navigator-wheel {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        /* Utility Classes */
+        .text-purple { color: #8E44AD; }
+        .text-green { color: #27AE60; }
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 2rem; }
+        .mb-1 { margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="#" class="logo">Nutritional Therapy for IBD</a>
+            <ul class="nav-links">
+                <li><a href="#">Nutritional Therapy</a></li>
+                <li><a href="#">Patients & Families</a></li>
+                <li><a href="#">Navigator</a></li>
+                <li><a href="#">Healthcare Professionals</a></li>
+                <li><a href="#">Research</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="label">About the interactive tool</div>
+                <h1>IBD Nutrition Navigator<sup>™</sup></h1>
+                <h2>An Option for Every Patient</h2>
+                
+                <div class="important-notes">
+                    <p><strong>Important notes before beginning the IBD Nutrition Navigator:</strong></p>
+                    <p><em><strong>Healthcare Professionals (HCPs) and patients should work collaboratively</strong> to answer all questions for the best results.<br>
+                    Follow the steps together, <strong>starting with the Nutritional Assessment.</strong></em></p>
+                    <p><em>Each step contains <strong>HCP Insights</strong> or <strong>Rationale</strong> with additional information and considerations.<br>
+                    Patients should always consult their established healthcare professionals first.</em></p>
+                    <p><em><strong>If more guidance is needed</strong>, refer to <a href="#"><strong>this list</strong></a> of HCPs experienced in IBD nutrition and familiar with this tool</em></p>
+                </div>
+            </div>
+            
+            <div>
+                <div class="navigator-wheel">
+                    <div>
+                        IBD Nutrition<br>
+                        Navigator™<br>
+                        <small>Interactive Tool</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Interactive Section -->
+    <section class="main-section">
+        <div class="main-container">
+            <div class="tool-container">
+                <!-- Replace this placeholder with your iframe -->
+                <div class="tool-placeholder">
+                    <h3>Your Interactive Tool Will Go Here</h3>
+                    <p>Replace this section with your iframe from railway.app</p>
+                    <p>Example: &lt;iframe src="https://your-app.railway.app" class="demo-iframe"&gt;&lt;/iframe&gt;</p>
+                </div>
+                
+                <!-- Uncomment and modify this when you're ready to add your iframe -->
+                <!--
+                <iframe 
+                    src="https://your-app.railway.app" 
+                    class="demo-iframe"
+                    title="IBD Nutrition Navigator Interactive Tool">
+                </iframe>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="disclaimer">
+                Disclaimer: Nutritional Therapy for IBD does not provide medical advice. References are for informational purposes only. Internet resources and links to sites should not be construed as endorsements of those sites, their opinions, or their content. Only medical professionals are qualified to provide medical advice. Patients should consult with their medical team when making decisions about their medical management plan.
+            </div>
+            <p>&copy; 2023 Nutritional Therapy for IBD. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
