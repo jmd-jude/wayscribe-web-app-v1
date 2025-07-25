@@ -16,6 +16,11 @@ const __dirname = path.dirname(__filename);
 import { DOMAIN_CONTEXT } from './domain-context.js';
 
 const app = express();
+
+// Debug: Check if API key is loaded
+console.log('API Key present:', !!process.env.ANTHROPIC_API_KEY);
+console.log('API Key first 10 chars:', process.env.ANTHROPIC_API_KEY?.substring(0, 10) + '...');
+
 const anthropic = new Anthropic({ 
   apiKey: process.env.ANTHROPIC_API_KEY 
 });
