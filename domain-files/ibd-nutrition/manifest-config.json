@@ -1,19 +1,5 @@
 {
   "domain": "ibd-nutrition",
   "display_name": "IBD Nutrition Navigator powered by Wayscribe",
-  "description": "Evidence-based nutrition therapy for IBD patients. Find personalized dietary approaches that work alongside medications to improve outcomes and quality of life.",
-  "author": {
-    "name": "IBD Nutrition Navigator Team",
-    "email": "support@jmd-ai.com"
-  },
-  "tools": [
-    {
-      "name": "welcome",
-      "description": "Start your IBD nutrition consultation with evidence-based framework"
-    },
-    {
-      "name": "consult",
-      "description": "Get nutrition guidance - try 'I'm having a flare' or 'Can diet help reduce medications?'"
-    }
-  ]
+  "description": "Evidence-based nutrition therapy for IBD patients. Find personalized dietary approaches that work alongside medications to improve outcomes and quality of life."
 }

@@ -1,20 +1,38 @@
 {
   "domain": "ibd-nutrition",
-  "track_elements": {
-    "user_profile": {},
-    "journey_state": {}
+  
+  "consultation": {
+    "entry_context": "string",
+    "current_phase": "string",
+    "sessions": 0,
+    "last_active": "timestamp"
   },
-  "disease_activity": ["flare", "improving", "remission"],
-  "dietary_approach": "string",
-  "checkpoint_intervals": {
-    "initial": "3_weeks",
-    "standard": "6_weeks",
-    "stable": "12_weeks"
+  
+  "user": {
+    "type": "patient",
+    "key_data": {
+      "disease_type": "string",
+      "disease_state": "string",
+      "years_diagnosed": "number",
+      "current_medications": []
+    }
   },
-  "clinical_markers": {
-    "crp": "number",
-    "calprotectin": "number",
-    "weight": "number",
-    "qol_score": "number"
+  
+  "progress": {
+    "deliverables": [],
+    "milestones_reached": [],
+    "objective_progress": 0
+  },
+  
+  "domain_tracking": {
+    "dietary_approach": "string",
+    "clinical_markers": {
+      "crp": "number",
+      "calprotectin": "number",
+      "weight": "number"
+    },
+    "symptom_severity": "number",
+    "next_checkpoint": "date",
+    "feasibility_score": "number"
   }
 }

@@ -17,15 +17,9 @@
     "progress_tracking",
     "adjustment_consultation"
   ],
-  "entry_routing": "disease_first",
-  "tracking_priorities": {
-    "inflammatory_markers": 0.30,
-    "nutritional_status": 0.25,
-    "quality_of_life": 0.25,
-    "goal_achievement": 0.20
-  },
-  "reassessment_triggers": {
-    "time_based": "12_weeks",
-    "event_based": ["flare", "hospitalization", "medication_change", "life_change"]
+  "entry_routes": {
+    "active_disease": ["flare_management", "symptom_control"],
+    "remission": ["maintenance_therapy", "optimization"],
+    "medication_reduction": ["therapeutic_diet", "intensive_therapy"]
   }
 }

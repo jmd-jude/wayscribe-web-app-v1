@@ -4,22 +4,22 @@
   "artifact_types": [
     {
       "file": "personalized-nutrition-plan.md",
-      "name": "personalized-nutrition-plan",
+      "name": "Personalized Nutrition Plan",
       "hint": "Comprehensive therapy plan with phased implementation"
     },
     {
       "file": "weekly-meal-plan.md",
-      "name": "weekly-meal-plan",
+      "name": "Weekly Meal Plan",
       "hint": "7-day meals with recipes and shopping list"
     },
     {
       "file": "progress-summary.md",
-      "name": "progress-summary",
+      "name": "Progress Summary",
       "hint": "Clinical markers and symptom tracking report"
     },
     {
       "file": "educational-materials.md",
-      "name": "educational-materials",
+      "name": "Educational Materials",
       "hint": "Diet approach guide with troubleshooting tips"
     }
   ]
