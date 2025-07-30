@@ -79,7 +79,7 @@ app.post('/api/session/init', async (req, res) => {
     
     // Create initial consultation with cached context
     const response = await anthropic.messages.create({
-      model: 'claude-3-haiku-20240307',
+      model: 'claude-3-5-sonnet-20241022',
       max_tokens: 4096,
       system: [{
         type: 'text',
@@ -143,7 +143,7 @@ app.post('/api/consult/:sessionId', async (req, res) => {
     
     // Use cached context for efficient API calls
     const response = await anthropic.messages.create({
-      model: 'claude-3-haiku-20240307',
+      model: 'claude-3-5-sonnet-20241022',
       max_tokens: 4096,
       system: [{
         type: 'text', 
