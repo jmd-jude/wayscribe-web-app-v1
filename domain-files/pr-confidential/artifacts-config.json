@@ -1,0 +1,24 @@
+{
+  "domain": "pr-confidential",
+  "output_format": "markdown",
+  "artifact_types": [
+    {
+      "file": "three-i-analysis.md",
+      "name": "3 I's Analysis",
+      "hint": "Innovation/Impact/Insight newsworthy story assessment",
+      "tag": "newsworthiness assessment"
+    },
+    {
+      "file": "pr-investment-guide.md",
+      "name": "PR Investment Guide",
+      "hint": "Your situation, timing urgency, and Lightspeed engagement options",
+      "tag": "engagement readiness guide"
+    },
+    {
+      "file": "pr-readiness-checklist.md",
+      "name": "PR Readiness Checklist",
+      "hint": "Foundation gaps and readiness score evaluation",
+      "tag": "foundation gaps evaluation"
+    }
+  ]
+}

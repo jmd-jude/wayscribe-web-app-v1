@@ -1,0 +1,23 @@
+{
+  "domain": "pr-confidential",
+  "orchestration_behavior": {
+    "information_gathering_intensity": 6,
+    "guidance_directiveness": 6,
+    "conversation_pacing": 5
+  },
+  "consultation_phases": [
+    "flexible_entry_assessment",
+    "business_context_discovery",
+    "foundation_and_education",
+    "three_i_evaluation",
+    "timeline_reality_check",
+    "budget_expectation_setting",
+    "readiness_diagnosis",
+    "strategic_recommendations"
+  ],
+  "entry_routes": {
+    "triggered_need": ["immediate_diagnostic", "gap_analysis"],
+    "business_story": ["conversational_discovery", "clarity_check"],
+    "exploring_pr": ["education_first", "foundation_building"]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "domain": "covered-call",
+  "objective": "Empower conservative investors to generate consistent income through covered calls, providing clear recommendations that match their risk tolerance and market conditions",
+  "synthesis_approach": "analytical_recommendations",
+  "personalization_approach": {
+    "factors": [
+      "account_type",
+      "risk_tolerance",
+      "income_target",
+      "position_size",
+      "system_maturity",
+      "market_conditions"
+    ],
+    "strategies": {
+      "probability_defaults": "84_percent_conservative",
+      "tax_optimization": "ira_more_aggressive",
+      "protection_emphasis": "itm_for_downside",
+      "income_focus": "monthly_percentage",
+      "system_guidance": "full_system_over_trades"
+    }
+  },
+  "qualification_strategy": {
+    "portfolio_threshold": "minimum_position_size",
+    "holding_commitment": "3_5_year_verification",
+    "account_suitability": "tax_status_assessment"
+  },
+  "personalization_settings": {
+    "language_matching": "maintain_expert_voice",
+    "native_language": "not_offered"
+  }
+}

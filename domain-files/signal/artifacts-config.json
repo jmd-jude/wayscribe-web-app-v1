@@ -1,0 +1,54 @@
+{
+  "domain": "signal",
+  "output_format": "markdown",
+  "artifact_types": [
+    {
+      "file": "alignment-heat-map.md",
+      "name": "Alignment Heat Map",
+      "hint": "Visual assessment of cross-functional alignment gaps",
+      "tag": "alignment gap visualization"
+    },
+    {
+      "file": "transformation-readiness-assessment.md",
+      "name": "Transformation Readiness",
+      "hint": "Qualification assessment with urgency and engagement next steps",
+      "tag": "readiness qualification"
+    },
+    {
+      "file": "capability-maturity-report.md",
+      "name": "Capability Maturity Report",
+      "hint": "Product capability assessment with benchmarking",
+      "tag": "capability benchmarking"
+    },
+    {
+      "file": "priority-action-plan.md",
+      "name": "Priority Action Plan",
+      "hint": "Phased implementation plan with quick wins",
+      "tag": "phased implementation"
+    },
+    {
+      "file": "investment-requirements.md",
+      "name": "Investment Requirements",
+      "hint": "Cost-benefit analysis for transformation",
+      "tag": "cost-benefit analysis"
+    },
+    {
+      "file": "product-vision-board.md",
+      "name": "Product Vision Board",
+      "hint": "5-component strategic vision framework",
+      "tag": "strategic vision framework"
+    },
+    {
+      "file": "strategic-roadmap.md",
+      "name": "Strategic Roadmap",
+      "hint": "Capability-based value delivery timeline",
+      "tag": "value delivery timeline"
+    },
+    {
+      "file": "product-scorecard.md",
+      "name": "Product Scorecard",
+      "hint": "AAARRR metrics and three values dashboard",
+      "tag": "metrics dashboard"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "domain": "signal",
+  "display_name": "Signal Product Management powered by Wayscribe",
+  "description": "Transform your product organization from feature factory to value engine. Get strategic guidance using Marc Aiello's proven ecosystem methodology.",
+  "ui_text": {
+    "input_placeholder": "Describe your product organization challenges or transformation goals..."
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "domain": "ibd-nutrition",
-  "objective": "Ensure patients leave understanding that nutritional healing is possible for their specific condition, equipped with concrete next steps to discuss with their healthcare provider",
+  "domain": "ibd-nutrition-clinician",
+  "objective": "Help clinicians find information, answer questions from both themselves and their patients, and deepen their understanding of the essential role that nutrition plays in managing IBD. Where appropriate, provide concrete details for next steps that can be discussed with patients and their healthcare teams.",
   "synthesis_approach": "disease_state_first",
   "personalization_approach": {
     "factors": [
@@ -22,7 +22,7 @@
   },
   "qualification_strategy": "none",
   "personalization_settings": {
-    "language_matching": "mirror_user_patterns",
-    "native_language": "offer_when_struggling"
+    "language_matching": "maintain_expert_voice",
+    "native_language": "not_offered"
   }
 }

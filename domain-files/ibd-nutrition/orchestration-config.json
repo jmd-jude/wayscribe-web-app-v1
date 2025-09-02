@@ -1,25 +1,26 @@
 {
-  "domain": "ibd-nutrition",
+  "domain": "ibd-nutrition-clinician",
   "orchestration_behavior": {
-    "information_gathering_intensity": 8,
-    "guidance_directiveness": 6,
-    "conversation_pacing": 7
+    "information_gathering_intensity": 5,
+    "guidance_directiveness": 8,
+    "conversation_pacing": 8
   },
   "consultation_phases": [
-    "disease_state_assessment",
-    "nutritional_status_evaluation",
-    "goal_determination",
+    "clinical_context_assessment",
+    "patient_case_evaluation",
+    "evidence_review",
     "feasibility_assessment",
-    "dietary_options_presentation",
-    "selection_guidance",
-    "implementation_planning",
-    "monitoring_setup",
-    "progress_tracking",
-    "adjustment_consultation"
+    "intervention_selection",
+    "implementation_guidance",
+    "patient_education_materials",
+    "monitoring_protocol",
+    "referral_considerations",
+    "follow_up_planning"
   ],
   "entry_routes": {
-    "active_disease": ["flare_management", "symptom_control"],
-    "remission": ["maintenance_therapy", "optimization"],
-    "medication_reduction": ["therapeutic_diet", "intensive_therapy"]
+    "patient_in_flare": ["acute_management", "nutrition_support"],
+    "patient_in_remission": ["maintenance_options", "optimization"],
+    "clinical_question": ["evidence_summary", "protocol_guidance"],
+    "patient_asked_about_diet": ["quick_recommendations", "education_resources"]
   }
 }

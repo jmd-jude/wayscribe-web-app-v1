@@ -1,0 +1,8 @@
+{
+  "domain": "smarter-premed",
+  "display_name": "Smarter PreMed: Powered by Wayscribe",
+  "description": "Collaborate with the Smarter PreMed methodology to position students strategically. Share cases, explore patterns, test your thinking.",
+  "ui_text": {
+    "input_placeholder": "Share student context, upload materials, or explore a strategic question..."
+  }
+}

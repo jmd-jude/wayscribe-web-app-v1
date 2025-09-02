@@ -1,0 +1,19 @@
+{
+  "domain": "signal",
+  "knowledge_files": [
+    {
+      "file": "signal-product-knowledge-base.md",
+      "name": "Signal Product Framework",
+      "hint": "Marc's complete product ecosystem methodology for transforming feature factories into value engines",
+      "tag": "product ecosystem methodology"
+    }
+  ],
+  "instructions": [
+    {
+      "file": "signal-system-instructions.md",
+      "name": "Signal Consultation Approach",
+      "hint": "How to apply Marc's ecosystem thinking and guide teams through product transformation",
+      "tag": "consultation methodology"
+    }
+  ]
+}

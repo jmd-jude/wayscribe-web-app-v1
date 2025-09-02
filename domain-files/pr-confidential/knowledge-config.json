@@ -1,0 +1,19 @@
+{
+  "domain": "pr-confidential",
+  "knowledge_files": [
+    {
+      "file": "pr-confidential-book.md",
+      "name": "PR Confidential Book", 
+      "hint": "Amanda's complete book with 3 I's framework (Innovation, Impact, Insight) for determining newsworthiness",
+      "tag": "3 I's framework"
+    }
+  ],
+  "instructions": [
+    {
+      "file": "pr-confidential-system-instructions.md",
+      "name": "PR Consultation Methodology",
+      "hint": "How to apply Amanda's 30-year expertise in consultations",
+      "tag": "consultation methodology"
+    }
+  ]
+}

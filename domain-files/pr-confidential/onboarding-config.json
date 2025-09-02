@@ -1,0 +1,9 @@
+{
+  "domain": "pr-confidential",
+  "activation_pattern": "discovery-first",
+  "consultation_unlocks": {
+    "required": [],
+    "discovers": ["triggering_event", "pr_readiness", "budget_reality", "timeline_urgency", "decision_authority", "misconception_level"],
+    "accelerators": ["company_website", "marketing_materials", "competitive_landscape"]
+  }
+}

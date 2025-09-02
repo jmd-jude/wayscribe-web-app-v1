@@ -1,0 +1,22 @@
+{
+  "domain": "smarter-premed",
+  "orchestration_behavior": {
+    "information_gathering_intensity": 5,
+    "guidance_directiveness": 4,
+    "conversation_pacing": 7
+  },
+  "consultation_phases": [
+    "diagnostic_discovery",
+    "profile_assessment",
+    "cohort_positioning",
+    "gap_identification",
+    "strategic_planning",
+    "progress_tracking",
+    "school_strategy"
+  ],
+  "entry_routes": {
+    "diagnosis": ["diagnostic_discovery"],
+    "positioning": ["cohort_positioning", "competitive_analysis"],
+    "strategy": ["gap_identification", "intervention_design"]
+  }
+}

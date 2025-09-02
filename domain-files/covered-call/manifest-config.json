@@ -1,0 +1,8 @@
+{
+  "domain": "covered-call",
+  "display_name": "Covered Call Strategy powered by Wayscribe",
+  "description": "Generate conservative monthly income from stocks you plan to hold long-term. Get probability-based strike recommendations that prioritize keeping your shares.",
+  "ui_text": {
+    "input_placeholder": "Enter a ticker symbol or describe your covered call situation..."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "domain": "smarter-premed",
+  "output_format": "markdown",
+  "artifact_types": [
+    {
+      "file": "cohort-positioning-analysis.md",
+      "name": "Cohort Positioning Analysis",
+      "hint": "Strategic placement within five-cohort framework",
+      "tag": "positioning tool"
+    },
+    {
+      "file": "strategic-insights-brief.md",
+      "name": "Strategic Insights Brief",
+      "hint": "Hidden curriculum revelations for this student",
+      "tag": "insight generator"
+    },
+    {
+      "file": "mission-aligned-school-list.md",
+      "name": "Mission-Aligned School List",
+      "hint": "Schools matched to authentic profile and goals",
+      "tag": "school strategy"
+    },
+    {
+      "file": "gap-closing-roadmap.md",
+      "name": "Gap-Closing Roadmap",
+      "hint": "Specific actions to reach target cohort benchmarks",
+      "tag": "action plan"
+    },
+    {
+      "file": "consultation-summary.md",
+      "name": "Consultation Summary",
+      "hint": "Session outcomes and next steps for student",
+      "tag": "session deliverable"
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 {
-  "domain": "ibd-nutrition",
-  "display_name": "IBD Nutrition Navigator powered by Wayscribe",
-  "description": "Evidence-based nutrition therapy for IBD patients. Find personalized dietary approaches that work alongside medications to improve outcomes and quality of life."
+  "domain": "ibd-nutrition-clinician",
+  "display_name": "IBD Nutrition Clinical Advisor powered by Wayscribe",
+  "description": "Evidence-based nutrition therapy guidance for healthcare providers. Match therapeutic diets to patient presentations using the IBD Nutrition Navigator framework.",
+  "ui_text": {
+    "input_placeholder": "Share your clinical case, patient presentation, or upload relevant documents..."
+  }
 }

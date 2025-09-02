@@ -1,0 +1,62 @@
+[
+  {
+    "name": "SCD",
+    "label": "Specific Carbohydrate Diet",
+    "description": "The Specific Carbohydrate Diet (SCD) is a whole-food-based, grain-free diet designed to reduce gut inflammation by eliminating complex carbohydrates, lactose, and most added sugars. It aims to restore gut flora balance and support mucosal healing. SCD has clinical evidence of benefit in pediatric Crohn’s disease and is often used as a therapeutic dietary approach for both induction and maintenance of remission in IBD.",
+    "phase_usage": "Can be used as primary or adjunctive therapy for induction or maintenance of remission. May start with softer, pureed vegetables for those with active symptoms or strictures."
+  },
+  {
+    "name": "mSCD",
+    "label": "Modified Specific Carbohydrate Diet",
+    "description": "The modified SCD (mSCD) is a less restrictive version of the traditional SCD, allowing for more food flexibility while retaining the foundational principles of eliminating complex carbohydrates, lactose, and processed foods. It is tailored for long-term use and improved adherence, especially when strict SCD becomes burdensome.",
+    "phase_usage": "Typically used as adjunctive therapy for maintenance of remission. May be a better option for those with moderate resources or who find strict adherence to full SCD difficult."
+  },
+  {
+    "name": "IBD-AID P1",
+    "label": "IBD-AID Phase 1",
+    "description": "Phase 1 of the IBD-Anti-Inflammatory Diet (IBD-AID) focuses on reducing symptoms during flares or active disease. It incorporates easily digestible, anti-inflammatory, and prebiotic-rich foods, often in cooked, pureed, or blended forms to minimize GI stress.",
+    "phase_usage": "Used during active flares or when GI tolerance is low. Typically includes broths, purees, and low-fiber foods to gently support the microbiome and reduce inflammation."
+  },
+  {
+    "name": "IBD-AID P2",
+    "label": "IBD-AID Phase 2",
+    "description": "In Phase 2, additional well-tolerated whole foods are introduced in soft or lightly cooked forms, including some raw fruits and vegetables. It builds upon Phase 1 by diversifying fiber sources and encouraging gentle microbiome modulation.",
+    "phase_usage": "Transitional phase used as symptoms decrease. Focus is on reintroducing foods with careful monitoring for tolerance."
+  },
+  {
+    "name": "IBD-AID P3",
+    "label": "IBD-AID Phase 3",
+    "description": "Phase 3 of the IBD-AID introduces a full array of anti-inflammatory, prebiotic, and probiotic foods including raw fruits/vegetables and fermented items. This phase supports long-term gut health and immune regulation through dietary diversity.",
+    "phase_usage": "Used for maintenance of remission. Suitable for those with resolved symptoms or well-managed disease."
+  },
+  {
+    "name": "CDED P2",
+    "label": "Crohn’s Disease Exclusion Diet Phase 2",
+    "description": "Phase 2 of the Crohn’s Disease Exclusion Diet (CDED) involves the gradual reintroduction of whole foods after the initial exclusion phase. It balances microbiome restoration with expanded dietary variety, while continuing to exclude processed foods, additives, and pro-inflammatory ingredients.",
+    "phase_usage": "Used after induction of remission with CDED Phase 1 or EEN. Supports maintenance while testing tolerance for reintroduced foods."
+  },
+  {
+    "name": "CDED P3",
+    "label": "Crohn’s Disease Exclusion Diet Phase 3",
+    "description": "Phase 3 is the maintenance phase of the CDED. It offers the greatest flexibility while still avoiding key harmful ingredients (emulsifiers, maltodextrin, gluten, etc.). Continued focus is placed on nutrient-rich, microbiota-supportive whole foods.",
+    "phase_usage": "Designed for long-term remission maintenance with a realistic and sustainable dietary pattern."
+  },
+  {
+    "name": "MED",
+    "label": "Mediterranean Diet",
+    "description": "The Mediterranean Diet (MED) is rich in vegetables, fruits, legumes, whole grains, fish, nuts, and olive oil. Though less restrictive than therapeutic diets like SCD or IBD-AID, it offers anti-inflammatory benefits and improves overall health, including for IBD patients in remission.",
+    "phase_usage": "Adjunctive therapy for maintaining remission or improving general health. May not be suitable during active flares without modifications."
+  },
+  {
+    "name": "EEN",
+    "label": "Exclusive Enteral Nutrition",
+    "description": "Exclusive Enteral Nutrition (EEN) is the use of nutritionally complete liquid formulas as the sole source of nutrition, with no solid food, for 6–12 weeks. It is a highly effective first-line therapy for pediatric Crohn's disease, inducing remission and promoting mucosal healing.",
+    "phase_usage": "Used as primary or adjunctive therapy for induction of remission, especially in children or those with complicated Crohn’s."
+  },
+  {
+    "name": "AIP",
+    "label": "Autoimmune Protocol",
+    "description": "The Autoimmune Protocol (AIP) is an elimination diet designed to reduce systemic inflammation by removing potentially antigenic foods (e.g., grains, legumes, dairy, eggs, nuts, seeds, nightshades). Over time, foods are reintroduced methodically to identify triggers.",
+    "phase_usage": "Adjunctive therapy; best used short-term under dietitian supervision due to risk of nutritional inadequacy. Often overlaps with early-phase therapeutic diets."
+  }
+]

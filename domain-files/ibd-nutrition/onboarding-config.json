@@ -1,9 +1,9 @@
 {
-  "domain": "ibd-nutrition",
+  "domain": "ibd-nutrition-clinician",
   "activation_pattern": "discovery-first",
   "consultation_unlocks": {
     "required": [],
-    "discovers": ["disease_type", "disease_state", "current_symptoms", "nutrition_goals", "feasibility_factors"],
-    "accelerators": ["medical_records", "recent_labs", "food_diary", "symptom_log"]
+    "discovers": ["clinician_context", "disease_type", "disease_state", "current_symptoms", "nutrition_goals", "feasibility_factors"],
+    "accelerators": ["specific_patient_case", "clinical_question", "time_for_discussion", "referral_resources"]
   }
 }

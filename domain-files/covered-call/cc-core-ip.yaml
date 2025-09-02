@@ -1,0 +1,104 @@
+```yaml
+domain: covered-call-income
+version: 1.0
+creator: "Options Income Strategist"
+
+## Note: Computation Types
+# This framework supports four types of quantitative methods:
+# - "declarative": Direct formulas and lookups (input → formula → output)
+# - "procedural": Step-by-step algorithms with branching logic
+# - "iterative": Methods requiring loops until convergence
+# - "stateful": Calculations that depend on historical state
+#
+# This covered call strategy is "declarative" because it uses pure formulas
+# and lookup tables with no loops, branching, or state dependencies.
+# The same YAML structure can accommodate other types by storing:
+# - Procedural: algorithm steps and decision rules
+# - Iterative: convergence criteria and loop structures  
+# - Stateful: state variables and update rules
+
+computation_type: declarative
+
+purpose:
+  tagline: "Stock Rental Income Calculator"
+  elevator_pitch: "Transform long-term stock holdings into monthly cash flow using mathematically-proven 84% success rate strategies"
+  target_user: "Investors who own stocks they're never selling anyway"
+  value_proposition:
+    - "Generate rental income from illiquid holdings"
+    - "84% probability-based success rates"
+    - "Mathematical precision using implied volatility"
+
+method:
+  type: quantitative
+  core_principle: "Implied volatility predicts future price movement within statistical probability cones"
+  
+  formulas:
+    expected_move:
+      formula: "stock_price * (iv_percent/100) * sqrt(days/365)"
+      description: "One standard deviation move based on IV and time"
+    
+    strike_selection:
+      formula: "stock_price + (expected_move * probability_multiplier)"
+      description: "Target strike at desired probability level"
+    
+    premium_estimate:
+      formula: "iv_percent * sqrt(days/365) * 0.4"
+      description: "Conservative premium estimate as percentage"
+  
+  lookup_tables:
+    probability_multipliers:
+      68: 1.0
+      75: 0.67
+      80: 0.84
+      84: 1.0
+      90: 1.28
+      95: 1.64
+    
+    iv_return_mapping:
+      low_iv: {range: "0-25%", annual_return: "10-15%"}
+      medium_iv: {range: "25-35%", annual_return: "15-25%"}
+      high_iv: {range: "35-50%", annual_return: "25-35%"}
+      very_high_iv: {range: "50%+", annual_return: "35%+"}
+  
+  strategies:
+    timeframe_optimization:
+      principle: "Balance time decay capture with transaction costs and market risk"
+      cycles:
+        weekly: {days: 7, trades_per_year: 52, note: "Maximum income, high maintenance"}
+        biweekly: {days: 14, trades_per_year: 26, note: "Optimal for most retail traders"}
+        monthly: {days: 30, trades_per_year: 12, note: "Lower maintenance, longer exposure"}
+      risk_adjustment: "multiply base return by success probability"
+  
+  implementation_rules:
+    strike_rounding:
+      - "Above $100: round to nearest $5"
+      - "Above $50: round to nearest $2.50"
+      - "Below $50: round to nearest $1"
+    
+    management_guidelines:
+      - "Buy to close at 50% profit"
+      - "Monitor for dividend assignment risk"
+      - "Consider rolling 5-7 days before expiration"
+
+consultation_defaults:
+  analysis_priorities:
+    - strike_selection_84_percent
+    - premium_income_calculation
+    - annualized_return_projection
+  
+  probability_presentation:
+    default: 84
+    alternatives: [75, 90]
+    note: "Present default first, then show alternatives for comparison"
+  
+  timeframe_focus:
+    default: "monthly"
+    days: 30
+    rationale: "Balances income generation with maintenance effort"
+
+outputs:
+  - quick_analysis: "Strike recommendation with probability assessment"
+  - timeframe_comparison: "Optimize trading frequency for given IV"
+  - professional_report: "Formal documentation for record-keeping"
+  - return_projection: "Annual income estimates based on IV levels"
+```

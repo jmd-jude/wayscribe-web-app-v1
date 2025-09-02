@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Dairy-Free",
+    "label": "Dairy-Free",
+    "description": "Excludes all dairy products including milk, cheese, yogurt, and butter. Beneficial for individuals with lactose intolerance or dairy sensitivity, which is common in IBD. Helps reduce GI symptoms such as bloating, gas, and diarrhea."
+  },
+  {
+    "name": "Lactose-Free & Minimal Lactose",
+    "label": "Lactose-Free or Low-Lactose",
+    "description": "Suitable for individuals who cannot digest lactose, the sugar in milk. Recipes may include aged cheeses or fermented yogurts like 24-hour SCD yogurt, which have very low lactose content."
+  },
+  {
+    "name": "Egg Free",
+    "label": "Egg-Free",
+    "description": "Excludes all forms of eggs and egg-based ingredients. Useful for people with egg allergies or those following elimination protocols such as the Autoimmune Protocol (AIP)."
+  },
+  {
+    "name": "Gluten-Free",
+    "label": "Gluten-Free",
+    "description": "Excludes gluten-containing grains such as wheat, barley, and rye. Essential for those with celiac disease and often helpful for those with non-celiac gluten sensitivity or IBD-related GI symptoms."
+  },
+  {
+    "name": "Grain-Free",
+    "label": "Grain-Free",
+    "description": "Eliminates all grains, including gluten-free grains like rice and corn. Commonly used in therapeutic diets such as SCD, mSCD, and AIP to reduce inflammation and improve gut health in IBD."
+  },
+  {
+    "name": "Nut Free",
+    "label": "Nut-Free",
+    "description": "Excludes tree nuts and peanuts. Important for people with nut allergies or during phases of IBD where nuts may be poorly tolerated due to strictures or active inflammation."
+  },
+  {
+    "name": "Shellfish Free",
+    "label": "Shellfish-Free",
+    "description": "Excludes crustaceans and mollusks. Important for people with shellfish allergies. Shellfish are not commonly used in IBD diets due to allergy risk and food safety concerns."
+  },
+  {
+    "name": "Soy Free",
+    "label": "Soy-Free",
+    "description": "Excludes soy and soy-derived ingredients such as soy sauce, soy lecithin, and tofu. Useful for individuals with soy allergies or those avoiding processed foods and phytoestrogens."
+  },
+  {
+    "name": "Vegan",
+    "label": "Vegan",
+    "description": "Excludes all animal products including meat, dairy, eggs, and honey. Not typically used as a therapeutic IBD diet due to potential nutrient gaps but can be adapted carefully with professional guidance."
+  },
+  {
+    "name": "Vegetarian",
+    "label": "Vegetarian",
+    "description": "Excludes meat and fish but allows dairy and/or eggs depending on the variation. Can be adapted to therapeutic IBD diets with appropriate focus on nutrient density and anti-inflammatory ingredients."
+  },
+  {
+    "name": "Low-FODMAP",
+    "label": "Low FODMAP",
+    "description": "Limits fermentable short-chain carbohydrates that can cause gas, bloating, and diarrhea. Evidence-based for IBS and useful for IBD patients with persistent GI symptoms, especially during quiescent disease. Recommended only short-term and under dietitian supervision."
+  }
+]

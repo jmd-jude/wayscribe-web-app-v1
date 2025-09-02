@@ -1,0 +1,31 @@
+{
+  "id": "string (unique identifier for the recipe)",
+  "name": "string (recipe title)",
+  "slug": "string (URL-friendly name)",
+  "servings": "string (serving size, e.g., '4 servings')",
+  "prep_time": "string (e.g., '15 minutes', can be null)",
+  "cook_time": "string (e.g., '30 minutes', can be null)",
+  "ingredients": [
+    "array of strings (each item is an ingredient, sometimes grouped by section)"
+  ],
+  "steps": [
+    "array of strings (step-by-step cooking instructions)"
+  ],
+  "url": "string (link to the original recipe on NTforIBD.org)",
+  "difficulty": "string (e.g., 'Easy', 'Medium')",
+  "meal-type": [
+    "array of strings (e.g., 'Dinner', 'Snacks', 'Breakfast')"
+  ],
+  "diet-requirements": [
+    "array of strings (e.g., 'Gluten-Free', 'Soy Free')"
+  ],
+  "diet-therapies": [
+    {
+      "name": "string (e.g., 'SCD', 'IBD-AID P3')",
+      "sort": "number (used for sorting/display purposes)"
+    }
+  ],
+  "cuisine": [
+    "array of strings or null (e.g., 'Asian', 'Kosher')"
+  ]
+}

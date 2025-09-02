@@ -1,0 +1,40 @@
+{
+  "domain": "pr-confidential",
+  
+  "consultation": {
+    "entry_context": "string",
+    "current_phase": "string",
+    "sessions": 0,
+    "last_active": "timestamp"
+  },
+  
+  "user": {
+    "type": "prospect",
+    "key_data": {
+      "company": "string",
+      "industry": "string",
+      "triggering_event": "string",
+      "contact_role": "string"
+    }
+  },
+  
+  "progress": {
+    "deliverables": [],
+    "milestones_reached": [],
+    "objective_progress": 0
+  },
+  
+  "domain_tracking": {
+    "pr_readiness": {
+      "three_i_score": "number",
+      "marketing_foundation": "number"
+    },
+    "misconceptions_corrected": [],
+    "qualification": {
+      "budget_awareness": "string",
+      "timeline_urgency": "string",
+      "lightspeed_fit": "boolean"
+    },
+    "education_level": "number"
+  }
+}

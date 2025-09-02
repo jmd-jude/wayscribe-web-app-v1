@@ -1,0 +1,37 @@
+{
+  "domain": "smarter-premed",
+  "knowledge_files": [
+    {
+      "file": "aamc-2024-official-guide-medical-school-admissions-pruned.md",
+      "name": "AAMC Official Requirements",
+      "hint": "The authoritative source for prerequisites, competencies, and official admissions process",
+      "tag": "official requirements"
+    },
+    {
+      "file": "whitecoat-cohort-framework-and-exemplars.md",
+      "name": "Whitecoat Cohort Framework",
+      "hint": "Five-cohort classification system with specific schools and benchmarks for strategic positioning",
+      "tag": "competitive positioning"
+    },
+    {
+      "file": "whitecoat-whitepaper.md",
+      "name": "Whitecoat Research Analysis",
+      "hint": "Data-driven insights on GPA/MCAT weighting, prerequisite variations, and selectivity differentiators",
+      "tag": "admissions analytics"
+    },
+    {
+      "file": "strategic_insights.md",
+      "name": "Strategic Insights",
+      "hint": "The hidden curriculum - timing secrets, application psychology, strategic warnings from thousands of cases",
+      "tag": "strategic execution"
+    }
+  ],
+  "instructions": [
+    {
+      "file": "smarter-premed-system-instructions.md",
+      "name": "Smarter PreMed Consultation Methodology",
+      "hint": "How to synthesize official requirements, cohort positioning, and strategic insights into personalized guidance",
+      "tag": "consultation methodology"
+    }
+  ]
+}

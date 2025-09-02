@@ -1,222 +1,38 @@
 # Wayscribe Architecture Notes
 
-## Core Pattern: Micromodels as Compressed Expertise
+**Purpose**: This document translates the jazz improvisation philosophy into practical consultation behaviors. It shows you how to decompress compressed expertise into personalized guidance - not through rigid processes but through natural conversation patterns that make expertise feel alive.
 
-The architecture embodies a fundamental insight: domains are "compressed expertise" that Claude decompresses into personalized consultations. Like jazz charts rather than sheet music - structure without prescription.
+## Core Pattern: Jazz, Not Symphony
 
-## Content Access Philosophy
+Domains are "compressed expertise" that you decompress into personalized consultations. Like jazz charts rather than sheet music - structure without prescription.
 
-### MCP Connector Reality
-MCP Connector only supports tools, not Resources. All domain content must flow through tool responses:
+The jazz metaphor means:
+- You improvise within the expert's framework
+- Each consultation is unique while staying true to the methodology
+- Structure enables creativity, not constrains it
 
-```javascript
-// At build time - bundle everything
-const DOMAIN = {
-  knowledge: { book: '[entire book content]' },
-  systemInstructions: '[consultation approach]',
-  templates: { 'three-i-analysis': '[template]' },
-  configs: { /* all 6 configs */ }
-};
+## Configuration as Encoded Philosophy
 
-// At runtime - serve through tools
-tools: [
-  {
-    name: "welcome",
-    // Returns welcome message with embedded domain context
-  },
-  {
-    name: "consult",
-    // Applies domain knowledge in responses
-  }
-]
-```
+The 6 config files aren't technical specs - they're the expert's philosophy in JSON.
 
-### Knowledge Integration
-Since we can't use Resources, domain expertise gets woven into tool responses:
-- Welcome tool embeds initial domain context
-- Consult tool applies knowledge to user situations
-- Templates structure deliverables within responses
-- System instructions guide consultation approach
+These configs create consultation personality. A 3/7/8 orchestration (gentle/directive/urgent) produces entirely different conversations than 8/3/3 (intense/exploratory/patient).
 
-The bundled architecture ensures instant access without file I/O.
+## Templates as Jazz Charts
 
-## Tool Flow as Consultation Architecture
+Templates use semantic variables that trust your interpretation:
 
-### Two-Tool Symphony
-```javascript
-tools: [
-  { name: "welcome", description: "Initialize consultation..." },
-  { name: "consult", description: "Continue consultation..." }
-]
-```
+**Good**: `{{analysis}}`, `{{recommendations}}`, `{{framework_application}}`
 
-Just two tools mirror natural human interaction:
-1. "Hello, I need help with..." (welcome)
-2. "Here's my situation..." (consult)
+**Bad**: `{{detailed_5_paragraph_analysis}}`, `{{bullet_list_exactly_10_items}}`
 
-Deliverables aren't a separate tool - they emerge naturally from consultation depth.
+Like chord progressions, templates suggest structure while allowing interpretive freedom. The expert provides the song form; you provide the performance.
 
-### Rich Descriptions Matter
-Tool descriptions aren't documentation - they're behavioral programming. Compare:
-- Weak: "Processes user input"
-- Strong: "Continue the consultation by applying domain expertise to the user's situation"
+## The Improvisation Principle
 
-The description shapes how Claude approaches the tool usage.
+Every consultation follows the same philosophical pattern:
+1. Compressed expertise (domain knowledge)
+2. Structural guidance (configs and templates)
+3. Contextual interpretation (your channel)
+4. Personalized performance (unique consultation)
 
-## Configuration as Philosophy
-
-### All 6 Configs Encode Values
-
-Even "unused" configs like state and synthesis provide essential context:
-
-**state-config.json**: What progress milestones the expert values
-**synthesis-config.json**: How the expert prioritizes personalization
-**onboarding-config.json**: The expert's philosophy on user readiness
-
-These aren't technical specs - they're encoded expertise about what matters.
-
-### The Objective as North Star
-
-**synthesis-config.json** now includes an "objective" field that defines the domain's business purpose. This single field cascades through every consultation decision:
-
-- **Lead generation domains**: Qualify prospects while educating
-- **Education domains**: Transform understanding and enable action  
-- **Navigation domains**: Guide to right solution efficiently
-
-The objective isn't just documentation - it's the success criteria for every interaction. All other configs support achieving this objective.
-
-### Orchestration Trinity
-```json
-{
-  "behavior": {
-    "intensity": 5,      // How deep to dig
-    "directiveness": 6,  // How strongly to guide
-    "pacing": 5         // How quickly to progress
-  }
-}
-```
-
-These numbers create consultation personality:
-- 3/7/8: Gentle exploration, strong guidance, quick action
-- 8/3/3: Deep investigation, self-discovery, patient pace
-
-### Synthesis Personalization
-```json
-{
-  "personalization_settings": {
-    "language_matching": "mirror_user_patterns",  // or "maintain_expert_voice"
-    "native_language": "offer_when_struggling"    // or "not_offered"
-  }
-}
-```
-
-These settings shape linguistic adaptation:
-
-**language_matching**:
-- `mirror_user_patterns`: Match user's vocabulary, complexity, and style. If they speak simply, respond simply.
-- `maintain_expert_voice`: Preserve domain terminology and sophisticated language as expertise signaling.
-
-**native_language**:
-- `offer_when_struggling`: Detect language barriers and proactively offer native language support.
-- `not_offered`: Professional contexts where English fluency is expected.
-
-## Meta Files as Performance Accelerators
-
-### getting-started.md
-First thing Claude reads. Sets mental model for entire domain in <30 seconds.
-
-### manifest-config.json
-Custom tool descriptions prevent generic interpretations.
-
-### welcome-config.json
-Entry patterns and triggers create immediate context recognition.
-
-Small files, massive impact on consultation quality.
-
-## The Single Server Hypothesis
-
-### Complexity Doesn't Equal Capability
-7-server architecture proves the concept but may add unnecessary interpretation overhead. The hypothesis:
-
-**Claude needs patterns, not processes.**
-
-Single server provides:
-- Clear tool flow (welcome → consult)
-- Direct resource access
-- Unified configuration
-- Simpler mental model
-
-### Bundle Everything
-```javascript
-const DOMAIN = {
-  knowledge: { book: '...' },     // All content in memory
-  configs: { /* all 6 */ },       // Complete philosophy
-  templates: { /* all */ },       // Ready structures
-  systemInstructions: '...'       // Consultation approach
-};
-```
-
-No file I/O, no inter-server communication, just pure consultation patterns.
-
-## Platform Standards Enable Scale
-
-### Harmonized Structure
-Every domain follows identical structure:
-- 6 standard configs (even if some feel "optional")
-- Consistent meta files
-- Same resource patterns
-- Predictable tool flow
-
-This isn't bureaucracy - it's what enables platform scaling.
-
-### Templates as Starting Points
-Templates use semantic variables:
-```markdown
-## {{framework_name}} Analysis for {{company_name}}
-```
-
-Not:
-```markdown
-## {{step_1_title}}: {{step_1_content}}
-```
-
-Trust Claude to interpret expertise, don't over-specify.
-
-## Performance Insights
-
-### What Accelerates Understanding
-1. Meta files for quick orientation
-2. Vision documents for mission alignment
-3. Rich tool descriptions for behavioral guidance
-4. Complete configs for philosophy encoding
-5. Clean templates for flexibility
-
-### What Slows Understanding
-1. Complex orchestration logic
-2. Defensive programming
-3. Over-specified templates
-4. Missing philosophical context
-5. Generic tool descriptions
-
-## Deployment Philosophy
-
-### Single Domain = Single Deployment
-- pr-confidential.wayscribe.ai
-- signal-product.wayscribe.ai
-- smarter-premed.wayscribe.ai
-
-Natural business boundaries. Each expert owns their infrastructure.
-
-### Invisible Excellence
-The best architecture disappears. Experts embed consultations on their sites. Users experience expertise, not platform.
-
-## The Core Insight
-
-**Architecture should encode consultation wisdom, not just enable tool execution.**
-
-Every architectural decision should ask:
-1. Does this help Claude deliver better consultations?
-2. Does this make expertise more accessible?
-3. Does this create more value for users?
-
-The best architecture is one that makes $50/month feel like a bargain for the transformation received.
+You're not executing a script - you're performing expertise in real-time, adapted to each user's specific needs while maintaining the expert's essential methodology.

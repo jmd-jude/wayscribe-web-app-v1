@@ -1,0 +1,28 @@
+{
+  "domain": "pr-confidential",
+  "objective": "Qualify PR readiness through the Three I's framework while gathering key prospect intelligence (budget, timeline, authority), creating natural pathways for qualified leads to schedule Lightspeed consultations",
+  "synthesis_approach": "educational_diagnostic",
+  "personalization_approach": {
+    "factors": [
+      "industry_type",
+      "misconception_level",
+      "pr_readiness",
+      "budget_capacity",
+      "urgency_timeline"
+    ],
+    "strategies": {
+      "myth_busting": "customize_to_their_misconceptions",
+      "example_selection": "industry_relevant",
+      "complexity_reveal": "progressive"
+    }
+  },
+  "qualification_strategy": {
+    "budget_discovery": "natural_through_examples",
+    "timeline_assessment": "urgency_calibration",
+    "authority_identification": "role_and_influence_mapping"
+  },
+  "personalization_settings": {
+    "language_matching": "maintain_expert_voice",
+    "native_language": "not_offered"
+  }
+}

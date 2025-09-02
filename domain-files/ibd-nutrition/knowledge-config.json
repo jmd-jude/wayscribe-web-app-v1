@@ -1,17 +1,43 @@
 {
-  "domain": "ibd-nutrition",
+  "domain": "ibd-nutrition-clinician",
   "knowledge_files": [
     {
       "file": "ibd-nutrition-navigator.md",
-      "name": "IBD Nutrition Navigator Knowledge Base",
-      "hint": "Evidence-based nutrition therapy protocols for Crohn's disease and ulcerative colitis management"
+      "name": "IBD Nutrition Navigator Framework",
+      "hint": "5-step methodology for matching dietary interventions to patient needs",
+      "tag": "IBD Nutrition Navigator methodology"
+    },
+    {
+      "file": "diet-therapies.json",
+      "name": "Therapeutic Diet Protocols",
+      "hint": "Phase-specific guidance for SCD, IBD-AID, CDED, and other therapeutic diets",
+      "tag": "therapeutic diet protocols"
+    },
+    {
+      "file": "diet-requirements.json",
+      "name": "Dietary Restrictions Database",
+      "hint": "IBD-specific rationales for common dietary restrictions",
+      "tag": "IBD-specific dietary restrictions"
+    },
+    {
+      "file": "ntforibd_sample_recipes_first50.json",
+      "name": "Clinical Recipe Library",
+      "hint": "Patient-ready recipes mapped to therapeutic diets and restrictions",
+      "tag": "clinical recipe library"
+    },
+    {
+      "file": "recipe-description.json",
+      "name": "Recipe Schema",
+      "hint": "Structure for recipe recommendations and meal planning",
+      "tag": "recipe structure"
     }
   ],
   "instructions": [
     {
       "file": "ibd-nutrition-system-instructions.md",
-      "name": "IBD Nutrition Consultation Methodology",
-      "hint": "How to personalize dietary approaches based on disease state, medications, and patient feasibility"
+      "name": "Clinical Consultation Approach",
+      "hint": "How to guide clinicians through nutrition therapy selection",
+      "tag": "consultation approach"
     }
   ]
 }

@@ -1,0 +1,33 @@
+{
+  "domain": "signal",
+  "objective": "Diagnose transformation pain severity while assessing organizational readiness (budget, commitment, timeline), building urgency for change and positioning Signal engagement as the critical next step",
+  "synthesis_approach": "problem_to_solution_guidance",
+  "personalization_approach": {
+    "factors": [
+      "pain_severity",
+      "organizational_maturity",
+      "engagement_type_needed",
+      "role_clarity",
+      "urgency_level",
+      "budget_readiness",
+      "commitment_capacity"
+    ],
+    "strategies": {
+      "pain_quantification": "cost_of_inaction_first",
+      "ecosystem_diagnosis": "three_pillars_assessment",
+      "value_alignment": "business_customer_user_trinity",
+      "progression_path": "diagnostic_to_transformation",
+      "evidence_gathering": "validation_before_investment",
+      "engagement_framing": "urgency_through_competition"
+    }
+  },
+  "qualification_strategy": {
+    "transformation_readiness": "pain_severity_threshold",
+    "budget_authority": "decision_maker_identification",
+    "implementation_timeline": "urgency_commitment_match"
+  },
+  "personalization_settings": {
+    "language_matching": "maintain_expert_voice",
+    "native_language": "not_offered"
+  }
+}

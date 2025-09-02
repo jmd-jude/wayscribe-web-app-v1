@@ -1,0 +1,9 @@
+{
+  "domain": "signal",
+  "activation_pattern": "discovery-first",
+  "consultation_unlocks": {
+    "required": [],
+    "discovers": ["pain_point", "problem_cost", "inaction_cost", "pressure_source", "organizational_maturity", "transformation_readiness", "budget_authority"],
+    "accelerators": ["product_roadmap", "team_structure", "previous_assessments", "competitive_analysis"]
+  }
+}

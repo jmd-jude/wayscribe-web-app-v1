@@ -1,0 +1,25 @@
+{
+  "domain": "covered-call",
+  "knowledge_files": [
+    {
+      "file": "covered-call-knowledge.md",
+      "name": "Covered Call Strategy Guide",
+      "hint": "Conservative options strategy for generating income while holding long-term stock positions",
+      "tag": "income strategy guide"
+    },
+    {
+      "file": "cc-core-ip.yaml",
+      "name": "Covered Call Core IP",
+      "hint": "Probability calculations, strike selection methodology, and risk management framework",
+      "tag": "probability methodology"
+    }
+  ],
+  "instructions": [
+    {
+      "file": "covered-call-system-instructions.md",
+      "name": "Covered Call Consultation Methodology",
+      "hint": "How to apply 84% probability approach for conservative strike recommendations",
+      "tag": "consultation approach"
+    }
+  ]
+}

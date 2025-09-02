@@ -1,0 +1,49 @@
+{
+  "domain": "medicare-medicaid-ma",
+  "knowledge_files": [
+    {
+      "file": "fed-medicare-and-you-official.md",
+      "name": "Federal Medicare & You Guide",
+      "hint": "Official CMS guide covering Medicare Parts A, B, C, and D fundamentals",
+      "tag": "federal Medicare guide"
+    },
+    {
+      "file": "ma-medicare-savings-programs.md",
+      "name": "MA Medicare Savings Programs",
+      "hint": "Massachusetts-specific financial assistance programs including QMB, SLMB, and QI",
+      "tag": "MA assistance programs"
+    },
+    {
+      "file": "ma-shine-2025-medicare-beginners-guide.md",
+      "name": "SHINE 2025 Medicare Beginner's Guide",
+      "hint": "Massachusetts SHINE counselor's guide for new Medicare beneficiaries",
+      "tag": "beginner enrollment guide"
+    },
+    {
+      "file": "ma-shine-MA-drug-plans.md",
+      "name": "MA Drug Plans Guide",
+      "hint": "Massachusetts-specific Part D prescription drug coverage options and formularies",
+      "tag": "prescription coverage options"
+    },
+    {
+      "file": "ma-shine-enrolling-in-medicare.md",
+      "name": "SHINE Enrollment Guide",
+      "hint": "Step-by-step enrollment process with critical deadlines and penalty avoidance",
+      "tag": "enrollment process guide"
+    },
+    {
+      "file": "ma-shine-guide-to-medicare-preventive-services.md",
+      "name": "Medicare Preventive Services Guide",
+      "hint": "Covered preventive care services, screenings, and wellness visits",
+      "tag": "preventive services coverage"
+    }
+  ],
+  "instructions": [
+    {
+      "file": "medicare-medicaid-ma-system-instructions.md",
+      "name": "Medicare/Medicaid MA Consultation Methodology",
+      "hint": "How to navigate complex eligibility, detect crisis situations, and guide Massachusetts residents",
+      "tag": "consultation methodology"
+    }
+  ]
+}

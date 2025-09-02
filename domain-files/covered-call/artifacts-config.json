@@ -1,0 +1,24 @@
+{
+  "domain": "covered-call",
+  "output_format": "markdown",
+  "artifact_types": [
+    {
+      "file": "strike-recommendation.md",
+      "name": "Strike Recommendation",
+      "hint": "Quick strike selection with probability analysis",
+      "tag": "strike selection"
+    },
+    {
+      "file": "probability-comparison.md",
+      "name": "Probability Comparison",
+      "hint": "Compare strikes by success probability and income",
+      "tag": "strike comparison"
+    },
+    {
+      "file": "comprehensive-analysis.md",
+      "name": "Comprehensive Analysis",
+      "hint": "Full analysis with projections and risk assessment",
+      "tag": "full analysis"
+    }
+  ]
+}

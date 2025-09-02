@@ -1,0 +1,23 @@
+{
+  "domain": "signal",
+  "orchestration_behavior": {
+    "information_gathering_intensity": 6,
+    "guidance_directiveness": 7,
+    "conversation_pacing": 6
+  },
+  "consultation_phases": [
+    "pain_point_discovery",
+    "context_assessment",
+    "diagnostic_analysis",
+    "solution_matching",
+    "implementation_planning",
+    "capability_building",
+    "progress_monitoring"
+  ],
+  "entry_routes": {
+    "feature_factory": ["diagnostic_first", "value_definition"],
+    "alignment_issues": ["ecosystem_assessment", "heat_mapping"],
+    "strategy_gaps": ["vision_development", "roadmap_creation"],
+    "validation_concerns": ["process_audit", "evidence_systems"]
+  }
+}

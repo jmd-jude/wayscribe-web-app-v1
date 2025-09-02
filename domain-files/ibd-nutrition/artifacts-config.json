@@ -1,26 +1,36 @@
 {
-  "domain": "ibd-nutrition",
+  "domain": "ibd-nutrition-clinician",
   "output_format": "markdown",
   "artifact_types": [
     {
-      "file": "personalized-nutrition-plan.md",
-      "name": "Personalized Nutrition Plan",
-      "hint": "Comprehensive therapy plan with phased implementation"
+      "file": "recipe-collection.md",
+      "name": "Personalized Recipe Collection",
+      "hint": "Curated recipes matching therapeutic diet, phase, and patient restrictions",
+      "tag": "recipe collection"
     },
     {
-      "file": "weekly-meal-plan.md",
-      "name": "Weekly Meal Plan",
-      "hint": "7-day meals with recipes and shopping list"
+      "file": "clinical-assessment.md",
+      "name": "Clinical Nutrition Assessment",
+      "hint": "Structured evaluation of patient's disease state and dietary intervention readiness",
+      "tag": "clinical assessment"
     },
     {
-      "file": "progress-summary.md",
-      "name": "Progress Summary",
-      "hint": "Clinical markers and symptom tracking report"
+      "file": "intervention-recommendation.md",
+      "name": "Dietary Intervention Recommendation",
+      "hint": "Evidence-based nutrition therapy plan with implementation timeline and monitoring",
+      "tag": "intervention plan"
     },
     {
-      "file": "educational-materials.md",
-      "name": "Educational Materials",
-      "hint": "Diet approach guide with troubleshooting tips"
+      "file": "patient-handout.md",
+      "name": "Patient Education Handout",
+      "hint": "Take-home instructions with meal ideas and clear expectations",
+      "tag": "patient handout"
+    },
+    {
+      "file": "clinical-note.md",
+      "name": "Clinical Documentation Note",
+      "hint": "EMR-ready summary of nutrition consultation and follow-up plan",
+      "tag": "EMR documentation"
     }
   ]
 }

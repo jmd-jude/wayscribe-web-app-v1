@@ -1,0 +1,19 @@
+{
+  "domain": "covered-call",
+  "orchestration_behavior": {
+    "information_gathering_intensity": 3,
+    "guidance_directiveness": 7,
+    "conversation_pacing": 8
+  },
+  "consultation_phases": [
+    "position_discovery",
+    "goal_assessment",
+    "strike_analysis",
+    "recommendation_delivery"
+  ],
+  "entry_routes": {
+    "income_generation": ["position_assessment", "strategy_building"],
+    "system_need": ["current_approach_audit", "system_education"],
+    "concept_education": ["itm_explanation", "protection_principles"]
+  }
+}

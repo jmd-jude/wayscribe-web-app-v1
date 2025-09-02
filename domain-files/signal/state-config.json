@@ -1,0 +1,38 @@
+{
+  "domain": "signal",
+  
+  "consultation": {
+    "entry_context": "string",
+    "current_phase": "string",
+    "sessions": 0,
+    "last_active": "timestamp"
+  },
+  
+  "user": {
+    "type": "organization",
+    "key_data": {
+      "company": "string",
+      "industry": "string",
+      "company_stage": "string",
+      "team_size": "number"
+    }
+  },
+  
+  "progress": {
+    "deliverables": [],
+    "milestones_reached": [],
+    "objective_progress": 0
+  },
+  
+  "domain_tracking": {
+    "pain_point": "string",
+    "pain_cost": "number",
+    "inaction_cost": "number",
+    "transformation_readiness": "number",
+    "qualification": {
+      "budget_authority": "boolean",
+      "timeline_urgency": "string",
+      "engagement_type": "string"
+    }
+  }
+}

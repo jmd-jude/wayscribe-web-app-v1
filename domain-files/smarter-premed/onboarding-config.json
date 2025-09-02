@@ -1,0 +1,16 @@
+{
+  "domain": "smarter-premed",
+  "activation_pattern": "discovery-first",
+  "consultation_unlocks": {
+    "required": [],
+    "discovers": [
+      "academic metrics (GPA/MCAT)",
+      "timeline to application",
+      "resume",
+      "transcript"
+    ],
+    "accelerators": [
+        "questionnaire"
+    ]
+  }
+}

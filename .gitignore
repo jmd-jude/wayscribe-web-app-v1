@@ -24,3 +24,10 @@ logs/
 # Temporary files
 *.tmp
 *.temp
+
+# Test data - DO NOT IGNORE test/data/*.pdf (required for pdf-parse)
+
+# Session storage
+sessions/
+*.session.json
+session-backup*.tar.gz

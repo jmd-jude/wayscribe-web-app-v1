@@ -1,0 +1,41 @@
+{
+  "domain": "covered-call",
+  
+  "consultation": {
+    "entry_context": "string",
+    "current_phase": "string",
+    "sessions": 0,
+    "last_active": "timestamp"
+  },
+  
+  "user": {
+    "type": "investor",
+    "key_data": {
+      "account_type": "string",
+      "risk_tolerance": "string",
+      "monthly_income_target": "number",
+      "positions_count": "number"
+    }
+  },
+  
+  "progress": {
+    "deliverables": [],
+    "milestones_reached": [],
+    "objective_progress": 0
+  },
+  
+  "domain_tracking": {
+    "active_position": {
+      "ticker": "string",
+      "shares": "number",
+      "holding_period": "string"
+    },
+    "last_recommendation": {
+      "strike": "number",
+      "expiration": "date",
+      "premium": "number"
+    },
+    "system_adoption": "string",
+    "total_income_generated": "number"
+  }
+}

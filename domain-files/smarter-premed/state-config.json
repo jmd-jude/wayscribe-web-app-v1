@@ -1,0 +1,26 @@
+{
+  "domain": "smarter-premed",
+  
+  "consultation": {
+    "entry_context": "string",
+    "current_phase": "string",
+    "sessions": 0,
+    "last_active": "timestamp"
+  },
+  
+  "user": {
+    "type": "consultant",
+    "key_data": {}
+  },
+  
+  "progress": {
+    "deliverables": [],
+    "milestones_reached": [],
+    "objective_progress": 0
+  },
+  
+  "domain_tracking": {
+    "current_student": {},
+    "students_reviewed": []
+  }
+}

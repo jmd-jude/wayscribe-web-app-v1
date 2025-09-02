@@ -1,0 +1,9 @@
+{
+  "domain": "covered-call",
+  "activation_pattern": "action-first",
+  "consultation_unlocks": {
+    "required": ["stock_ticker"],
+    "discovers": ["risk_tolerance", "income_expectations", "system_maturity", "tax_situation"],
+    "accelerators": ["shares_owned", "monthly_income_target", "account_type", "holding_timeframe"]
+  }
+}

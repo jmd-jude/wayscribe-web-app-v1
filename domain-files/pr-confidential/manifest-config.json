@@ -1,0 +1,8 @@
+{
+  "domain": "pr-confidential",
+  "display_name": "PR Confidential powered by Wayscribe",
+  "description": "Get PR guidance from Amanda Proscia's 30 years of expertise. Find out if you're ready for PR with the proven 3 I's framework.",
+  "ui_text": {
+    "input_placeholder": "Tell me about your company, product launch, or PR challenges..."
+  }
+}
