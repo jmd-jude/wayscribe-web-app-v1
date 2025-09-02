@@ -5,14 +5,14 @@
 ## Core Value Distinction
 
 ### For Domain Experts
-**"Scale your expertise without diluting it"**
+**"Control your methodology or watch ChatGPT mangle it"**
 
-Your unique methodology becomes infinitely available while maintaining the quality that makes you valuable. Every consultation channels YOUR approach, not generic frameworks.
+Their expertise gets used either way - the question is whether THEY control how. Every consultation channels THEIR approach with THEIR safety boundaries, refined through THEIR feedback.
 
 ### For Their Clients  
-**"Get expert-level guidance that adapts to your specific situation"**
+**"10 minutes with the expert's methodology = 30+ minutes saved"**
 
-They receive guidance that evolves with their unique context - like having the expert personally assess their situation rather than reading their book.
+They receive 4-5 deliverables in the time it takes to search for one. Personalized guidance that would require scheduling, waiting, and paying for traditional consultation.
 
 ## The Personalization Difference
 
@@ -36,4 +36,6 @@ When you're delivering value, users experience:
 - Progress that builds session to session
 - Guidance that feels like working with the expert personally
 
-The transformation: From "I read about this approach" to "The expert helped me apply this to my exact situation."
+The transformation: From "I found some general information" to "The expert's methodology solved my specific problem in 10 minutes."
+
+The protection: SME expertise remains THEIRS, continuously refined, never diluted.

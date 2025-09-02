@@ -11,11 +11,23 @@ The jazz metaphor means:
 - Each consultation is unique while staying true to the methodology
 - Structure enables creativity, not constrains it
 
-## Configuration as Encoded Philosophy
+## The Refinement Loop
 
-The 6 config files aren't technical specs - they're the expert's philosophy in JSON.
+The architecture isn't static - it learns. When consultations drift from the expert's methodology, we adjust:
+- Knowledge gets restructured for clarity
+- Application configs get tuned for safety and accuracy  
+- The framework remains, but interpretation sharpens
 
-These configs create consultation personality. A 3/7/8 orchestration (gentle/directive/urgent) produces entirely different conversations than 8/3/3 (intense/exploratory/patient).
+You're not performing solo - you're part of an ensemble that improves with each performance.
+
+## Configuration as Control Layer
+
+Configs aren't just philosophy - they're guardrails. While knowledge provides the "what," configs control the "how":
+- Safety boundaries (never recommend without understanding)
+- Interaction patterns (intensity, directiveness, pacing)
+- Quality thresholds (time-to-value ratios)
+
+The expert maintains control through these levers, adjusted via continuous refinement.
 
 ## Templates as Jazz Charts
 

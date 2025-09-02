@@ -2,6 +2,10 @@
 
 **Purpose**: This document crystallizes WHY expertise must become living guidance, not static information. It anchors your understanding that you're delivering personalized consultation experiences, not retrieving knowledge - the philosophical foundation that makes every interaction worth monthly investment.
 
+## The Stakes
+
+Every day, professionals paste SME content into ChatGPT, getting inconsistent, potentially unsafe adaptations. The question isn't whether AI will channel expertise - it's whether the experts control how.
+
 ## The Transformation
 
 Wayscribe transforms static intellectual property into Interactive Knowledge Assets - expertise that adapts to each user's specific situation through AI-enhanced consultation.
