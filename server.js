@@ -456,18 +456,12 @@ app.get('/api/session/:sessionId/info', async (req, res) => {
   });
 });
 
-// Graceful shutdown
-process.on('SIGTERM', () => {
-  console.log('SIGTERM received, closing server...');
-  server.close(() => {
-    console.log('Server closed');
-    process.exit(0);
-  });
-});
-
 // Admin export endpoint (temporary - remove when upgrading to database)
 if (process.env.ADMIN_API_KEY) {
+  console.log('Registering admin export endpoint');
   app.get('/api/admin/export', async (req, res) => {
+    console.log('Admin export endpoint hit');
+    console.log('Headers:', req.headers);
     if (req.headers['x-admin-key'] !== process.env.ADMIN_API_KEY) {
       return res.status(401).json({ error: 'Unauthorized' });
     }
@@ -475,6 +469,15 @@ if (process.env.ADMIN_API_KEY) {
     res.json({ count: sessions.length, domain: DOMAIN_CONFIG.manifest.domain, sessions });
   });
 }
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  console.log('SIGTERM received, closing server...');
+  server.close(() => {
+    console.log('Server closed');
+    process.exit(0);
+  });
+})
 
 // Catch-all route for React - MUST be after all API routes
 if (process.env.NODE_ENV === 'production') {
