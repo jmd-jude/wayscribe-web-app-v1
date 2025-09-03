@@ -83,7 +83,8 @@ const sessionStore = new FileSessionStore();
 // Admin export endpoint (temporary - remove when upgrading to database)
 if (process.env.ADMIN_API_KEY) {
   console.log('Registering admin export endpoint');
-  app.get('/api/admin/export', async (req, res) => {
+  app.use('/api/admin/export', async (req, res, next) => {
+    if (req.method !== 'GET') return next();
     console.log('Admin export endpoint hit');
     console.log('Headers:', req.headers);
     if (req.headers['x-admin-key'] !== process.env.ADMIN_API_KEY) {
