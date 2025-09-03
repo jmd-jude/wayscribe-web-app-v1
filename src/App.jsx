@@ -361,7 +361,7 @@ const App = () => {
         {/* Conversation Panel */}
         <div className="flex-1 flex flex-col bg-white border-r border-gray-200">
           <div className="px-6 py-2 bg-white-50 border-b border-gray-100">
-            <p className="text-xs text-amber-800 text-right">Good colleagues verify each other's thinking. Always double-check critical decisions with your Wayscribe consultant.</p>
+            <p className="text-xs text-amber-800 text-right">Always verify critical decisions with your Wayscribe consultant.</p>
           </div>
           {/* Messages */}
           <div className="flex-1 overflow-y-auto px-6 py-6">

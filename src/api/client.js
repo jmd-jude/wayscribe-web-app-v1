@@ -1,5 +1,5 @@
-// API client for IBD Navigator
-const API_BASE = import.meta.env.DEV ? 'http://localhost:3000' : '';
+// API client
+const API_BASE = '';
 
 class ApiClient {
   async initSession() {
