@@ -98,6 +98,20 @@ if (process.env.NODE_ENV === 'production') {
 // Session storage (file-based)
 const sessionStore = new FileSessionStore();
 
+// Admin export endpoint (temporary - remove when upgrading to database)
+if (process.env.ADMIN_API_KEY) {
+  console.log('Registering admin export endpoint');
+  app.get('/api/admin/export', async (req, res) => {
+    console.log('Admin export endpoint hit');
+    console.log('Headers:', req.headers);
+    if (req.headers['x-admin-key'] !== process.env.ADMIN_API_KEY) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+    const sessions = await sessionStore.getAllSessions();
+    res.json({ count: sessions.length, domain: DOMAIN_CONFIG.manifest.domain, sessions });
+  });
+}
+
 // Cleanup old sessions hourly
 setInterval(async () => {
   try {
@@ -455,20 +469,6 @@ app.get('/api/session/:sessionId/info', async (req, res) => {
     cacheAge: Math.round((Date.now() - session.cacheCreatedAt) / 1000) + ' seconds'
   });
 });
-
-// Admin export endpoint (temporary - remove when upgrading to database)
-if (process.env.ADMIN_API_KEY) {
-  console.log('Registering admin export endpoint');
-  app.get('/api/admin/export', async (req, res) => {
-    console.log('Admin export endpoint hit');
-    console.log('Headers:', req.headers);
-    if (req.headers['x-admin-key'] !== process.env.ADMIN_API_KEY) {
-      return res.status(401).json({ error: 'Unauthorized' });
-    }
-    const sessions = await sessionStore.getAllSessions();
-    res.json({ count: sessions.length, domain: DOMAIN_CONFIG.manifest.domain, sessions });
-  });
-}
 
 // Graceful shutdown
 process.on('SIGTERM', () => {
