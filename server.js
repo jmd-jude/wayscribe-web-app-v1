@@ -77,23 +77,8 @@ app.get('/test', (req, res) => {
   res.json({ test: 'working' });
 });
 
-// Session storage (file-based) - moved up for admin endpoint
+// Session storage (file-based)
 const sessionStore = new FileSessionStore();
-
-// Admin export endpoint (temporary - remove when upgrading to database)
-if (process.env.ADMIN_API_KEY) {
-  console.log('Registering admin export endpoint');
-  app.use('/api/admin/export', async (req, res, next) => {
-    if (req.method !== 'GET') return next();
-    console.log('Admin export endpoint hit');
-    console.log('Headers:', req.headers);
-    if (req.headers['x-admin-key'] !== process.env.ADMIN_API_KEY) {
-      return res.status(401).json({ error: 'Unauthorized' });
-    }
-    const sessions = await sessionStore.getAllSessions();
-    res.json({ count: sessions.length, domain: DOMAIN_CONFIG.manifest.domain, sessions });
-  });
-}
 
 // Serve static files
 if (process.env.NODE_ENV === 'production') {
@@ -454,6 +439,18 @@ app.get('/health', async (req, res) => {
     status: 'healthy',
     timestamp: new Date().toISOString()
   });
+});
+
+// Admin export endpoint
+app.get('/api/admin/export', async (req, res) => {
+  if (!process.env.ADMIN_API_KEY) {
+    return res.status(501).json({ error: 'Admin export not configured' });
+  }
+  if (req.headers['x-admin-key'] !== process.env.ADMIN_API_KEY) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  const sessions = await sessionStore.getAllSessions();
+  res.json({ count: sessions.length, domain: DOMAIN_CONFIG.manifest.domain, sessions });
 });
 
 // Session info endpoint (for debugging)
