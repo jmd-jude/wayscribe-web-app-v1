@@ -477,7 +477,7 @@ process.on('SIGTERM', () => {
     console.log('Server closed');
     process.exit(0);
   });
-})
+});
 
 // Catch-all route for React - MUST be after all API routes
 if (process.env.NODE_ENV === 'production') {
