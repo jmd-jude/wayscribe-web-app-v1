@@ -80,6 +80,19 @@ app.get('/test', (req, res) => {
 // Session storage (file-based)
 const sessionStore = new FileSessionStore();
 
+// Admin export endpoint - MUST BE HERE before static files break everything
+app.get('/api/admin/export', async (req, res) => {
+  console.log('Admin export endpoint hit');
+  if (!process.env.ADMIN_API_KEY) {
+    return res.status(501).json({ error: 'Admin export not configured' });
+  }
+  if (req.headers['x-admin-key'] !== process.env.ADMIN_API_KEY) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  const sessions = await sessionStore.getAllSessions();
+  res.json({ count: sessions.length, domain: DOMAIN_CONFIG.manifest.domain, sessions });
+});
+
 // Serve static files
 if (process.env.NODE_ENV === 'production') {
   // Serve React build in production - but NOT as fallback for all routes
@@ -439,18 +452,6 @@ app.get('/health', async (req, res) => {
     status: 'healthy',
     timestamp: new Date().toISOString()
   });
-});
-
-// Admin export endpoint
-app.get('/api/admin/export', async (req, res) => {
-  if (!process.env.ADMIN_API_KEY) {
-    return res.status(501).json({ error: 'Admin export not configured' });
-  }
-  if (req.headers['x-admin-key'] !== process.env.ADMIN_API_KEY) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
-  const sessions = await sessionStore.getAllSessions();
-  res.json({ count: sessions.length, domain: DOMAIN_CONFIG.manifest.domain, sessions });
 });
 
 // Session info endpoint (for debugging)
