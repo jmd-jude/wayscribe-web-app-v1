@@ -103,4 +103,22 @@ export class FileSessionStore extends SessionStore {
       console.log(`Cleaned up ${cleaned} expired sessions`);
     }
   }
+  
+  async getAllSessions() {
+    await this.ensureDirectory();
+    const files = await fs.readdir(this.basePath);
+    const sessions = [];
+    
+    for (const file of files) {
+      if (!file.endsWith('.json')) continue;
+      
+      const sessionId = path.basename(file, '.json');
+      const session = await this.load(sessionId);
+      if (session) {
+        sessions.push({ id: sessionId, ...session });
+      }
+    }
+    
+    return sessions;
+  }
 }

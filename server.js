@@ -464,6 +464,17 @@ process.on('SIGTERM', () => {
   });
 });
 
+// Admin export endpoint (temporary - remove when upgrading to database)
+if (process.env.ADMIN_API_KEY) {
+  app.get('/api/admin/export', async (req, res) => {
+    if (req.headers['x-admin-key'] !== process.env.ADMIN_API_KEY) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+    const sessions = await sessionStore.getAllSessions();
+    res.json({ count: sessions.length, domain: DOMAIN_CONFIG.manifest.domain, sessions });
+  });
+}
+
 // Catch-all route for React - MUST be after all API routes
 if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
