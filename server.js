@@ -27,6 +27,7 @@ console.log('- PORT:', process.env.PORT);
 console.log('- API Key present:', !!process.env.ANTHROPIC_API_KEY);
 console.log('- API Key length:', process.env.ANTHROPIC_API_KEY?.length);
 console.log('- API Key first 10 chars:', process.env.ANTHROPIC_API_KEY?.substring(0, 10));
+console.log('- Admin Key present:', !!process.env.ADMIN_API_KEY);
 console.log('- All env keys:', Object.keys(process.env).filter(k => !k.startsWith('npm_')).join(', '));
 
 // Check if the key is undefined or empty
