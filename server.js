@@ -70,16 +70,24 @@ app.use((req, res, next) => {
   next();
 });
 
+// Debug route - test if server responds at all
+app.get('/test', (req, res) => {
+  console.log('Test route hit');
+  res.json({ test: 'working' });
+});
+
 // Serve static files
 if (process.env.NODE_ENV === 'production') {
-  // Serve React build in production
-  app.use(express.static(path.join(__dirname, 'dist')));
+  // Serve React build in production - but NOT as fallback for all routes
+  const distPath = path.join(__dirname, 'dist');
+  app.use(express.static(distPath, {
+    index: false,  // Don't serve index.html as default
+    fallthrough: true  // Pass through to next handler if file not found
+  }));
   
-  // Handle React routing - serve index.html for all non-API routes
-  app.get('*', (req, res) => {
-    if (!req.path.startsWith('/api')) {
-      res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-    }
+  // Explicitly serve index.html only for root
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
   });
 } else {
   // Serve vanilla files in development
@@ -395,6 +403,7 @@ app.get('/api/session/:sessionId/status', async (req, res) => {
 
 // Restore session for frontend
 app.get('/api/session/:sessionId/restore', async (req, res) => {
+  console.log(`Restore request for session: ${req.params.sessionId}`);
   try {
     const { sessionId } = req.params;
     const session = await sessionStore.load(sessionId);
@@ -454,6 +463,13 @@ process.on('SIGTERM', () => {
     process.exit(0);
   });
 });
+
+// Catch-all route for React - MUST be after all API routes
+if (process.env.NODE_ENV === 'production') {
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  });
+}
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
