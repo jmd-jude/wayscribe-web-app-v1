@@ -113,58 +113,53 @@ app.post('/api/session/init', async (req, res) => {
     console.log(`Initializing session: ${sessionId}`);
     
     // Create initial consultation with cached context
-    // Retry logic for rate limits
-    let retries = 0;
     let response;
     
-    while (retries < 3) {
-      try {
-        response = await anthropic.messages.create({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 8192,
-          system: [{
-            type: 'text',
-            text: DOMAIN_CONTEXT,
-            cache_control: { type: 'ephemeral' }
-          }],
-          messages: [{ 
-            role: 'user', 
-            content: 'Begin consultation' 
-          }]
-        }, {
-          headers: {
-            'anthropic-beta': 'prompt-caching-2024-07-31'
-          }
+    try {
+      response = await anthropic.messages.create({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 8192,
+        system: [{
+          type: 'text',
+          text: DOMAIN_CONTEXT,
+          cache_control: { type: 'ephemeral' }
+        }],
+        messages: [{ 
+          role: 'user', 
+          content: 'Begin consultation' 
+        }]
+      }, {
+        headers: {
+          'anthropic-beta': 'prompt-caching-2024-07-31'
+        }
+      });
+      
+    } catch (error) {
+      if (error.status === 429) {
+        // Rate limit error - save session anyway for later
+        console.log('Rate limit on init - saving session for later use');
+        await sessionStore.save(sessionId, {
+          history: [
+            { role: 'user', content: 'Begin consultation' }
+          ],
+          lastActivity: Date.now(),
+          cacheCreatedAt: Date.now(),
+          domain: DOMAIN_CONFIG.manifest.domain,
+          rateLimited: true
         });
         
-        // If successful, break out of retry loop
-        break;
-        
-      } catch (error) {
-        if (error.status === 429 && retries < 2) {
-          // Rate limit error - wait and retry
-          const retryAfter = parseInt(error.headers?.['retry-after'] || '60');
-          console.log(`Rate limit hit. Waiting ${retryAfter} seconds before retry ${retries + 1}...`);
-          
-          // Send a response to the client to wait
-          if (retries === 0) {
-            res.status(503).json({ 
-              error: 'Rate limit reached. Please wait a moment and try again.',
-              retryAfter 
-            });
-            return;
-          }
-          
-          await new Promise(resolve => setTimeout(resolve, retryAfter * 1000));
-          retries++;
-        } else {
-          // Other error or max retries reached
-          throw error;
-        }
+        const retryAfter = parseInt(error.headers?.['retry-after'] || '60');
+        return res.status(503).json({ 
+          sessionId,  // Still return sessionId so client can retry
+          error: 'Rate limit reached. Please wait and retry.',
+          retryAfter 
+        });
       }
+      // Other errors
+      throw error;
     }
     
-    // Save session to disk
+    // Save successful session to disk
     await sessionStore.save(sessionId, {
       history: [
         { role: 'user', content: 'Begin consultation' },
