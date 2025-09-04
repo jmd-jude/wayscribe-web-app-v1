@@ -80,9 +80,9 @@ app.get('/test', (req, res) => {
 // Session storage (file-based)
 const sessionStore = new FileSessionStore();
 
-// Admin export endpoint - MUST BE HERE before static files break everything
+// Admin export endpoint - MUST BE BEFORE static files
 app.get('/api/admin/export', async (req, res) => {
-  console.log('Admin export endpoint hit');
+  console.log('Admin export endpoint hit - headers:', req.headers);
   if (!process.env.ADMIN_API_KEY) {
     return res.status(501).json({ error: 'Admin export not configured' });
   }
@@ -93,14 +93,23 @@ app.get('/api/admin/export', async (req, res) => {
   res.json({ count: sessions.length, domain: DOMAIN_CONFIG.manifest.domain, sessions });
 });
 
-// Serve static files
+// ALL OTHER API ROUTES MUST BE HERE BEFORE STATIC FILES
+
+// Serve static files - BUT NOT FOR API ROUTES
 if (process.env.NODE_ENV === 'production') {
-  // Serve React build in production - but NOT as fallback for all routes
+  // Serve React build ONLY for non-API routes
   const distPath = path.join(__dirname, 'dist');
-  app.use(express.static(distPath, {
-    index: false,  // Don't serve index.html as default
-    fallthrough: true  // Pass through to next handler if file not found
-  }));
+  app.use((req, res, next) => {
+    // Skip static files for API routes
+    if (req.path.startsWith('/api/')) {
+      return next();
+    }
+    // Serve static files for everything else
+    express.static(distPath, {
+      index: false,  // Don't serve index.html as default
+      fallthrough: true  // Pass through to next handler if file not found
+    })(req, res, next);
+  });
   
   // Explicitly serve index.html only for root
   app.get('/', (req, res) => {
