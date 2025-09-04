@@ -27,7 +27,6 @@ console.log('- PORT:', process.env.PORT);
 console.log('- API Key present:', !!process.env.ANTHROPIC_API_KEY);
 console.log('- API Key length:', process.env.ANTHROPIC_API_KEY?.length);
 console.log('- API Key first 10 chars:', process.env.ANTHROPIC_API_KEY?.substring(0, 10));
-console.log('- Admin Key present:', !!process.env.ADMIN_API_KEY);
 console.log('- All env keys:', Object.keys(process.env).filter(k => !k.startsWith('npm_')).join(', '));
 
 // Check if the key is undefined or empty
@@ -60,7 +59,7 @@ app.use(express.json());
 app.use(cors({
   origin: '*',
   methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'X-Admin-Key'],
+  allowedHeaders: ['Content-Type'],
   credentials: true
 }));
 
@@ -77,39 +76,14 @@ app.get('/test', (req, res) => {
   res.json({ test: 'working' });
 });
 
-// Session storage (file-based)
-const sessionStore = new FileSessionStore();
-
-// Admin export endpoint - MUST BE BEFORE static files
-app.get('/api/admin/export', async (req, res) => {
-  console.log('Admin export endpoint hit - headers:', req.headers);
-  if (!process.env.ADMIN_API_KEY) {
-    return res.status(501).json({ error: 'Admin export not configured' });
-  }
-  if (req.headers['x-admin-key'] !== process.env.ADMIN_API_KEY) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
-  const sessions = await sessionStore.getAllSessions();
-  res.json({ count: sessions.length, domain: DOMAIN_CONFIG.manifest.domain, sessions });
-});
-
-// ALL OTHER API ROUTES MUST BE HERE BEFORE STATIC FILES
-
-// Serve static files - BUT NOT FOR API ROUTES
+// Serve static files
 if (process.env.NODE_ENV === 'production') {
-  // Serve React build ONLY for non-API routes
+  // Serve React build in production - but NOT as fallback for all routes
   const distPath = path.join(__dirname, 'dist');
-  app.use((req, res, next) => {
-    // Skip static files for API routes
-    if (req.path.startsWith('/api/')) {
-      return next();
-    }
-    // Serve static files for everything else
-    express.static(distPath, {
-      index: false,  // Don't serve index.html as default
-      fallthrough: true  // Pass through to next handler if file not found
-    })(req, res, next);
-  });
+  app.use(express.static(distPath, {
+    index: false,  // Don't serve index.html as default
+    fallthrough: true  // Pass through to next handler if file not found
+  }));
   
   // Explicitly serve index.html only for root
   app.get('/', (req, res) => {
@@ -119,6 +93,9 @@ if (process.env.NODE_ENV === 'production') {
   // Serve vanilla files in development
   app.use(express.static(__dirname));
 }
+
+// Session storage (file-based)
+const sessionStore = new FileSessionStore();
 
 // Cleanup old sessions hourly
 setInterval(async () => {
