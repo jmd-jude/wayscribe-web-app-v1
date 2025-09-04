@@ -9,8 +9,11 @@ const __dirname = path.dirname(__filename);
 export class FileSessionStore extends SessionStore {
   constructor(basePath = null) {
     super();
-    this.basePath = basePath || path.join(__dirname, '..', 'sessions');
+    this.basePath = process.env.RAILWAY_VOLUME_MOUNT_PATH || 
+                    basePath || 
+                    path.join(__dirname, '..', 'sessions');
     this.directoryEnsured = false;
+    console.log(`FileSessionStore using path: ${this.basePath}`);
   }
   
   async ensureDirectory() {
