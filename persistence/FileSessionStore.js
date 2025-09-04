@@ -28,14 +28,21 @@ export class FileSessionStore extends SessionStore {
   }
   
   async save(sessionId, data) {
+    console.log(`[FileSessionStore] save() called for session: ${sessionId}`);
     await this.ensureDirectory();
     const filepath = path.join(this.basePath, `${sessionId}.json`);
+    console.log(`[FileSessionStore] Writing to: ${filepath}`);
     const sessionData = {
       ...data,
       savedAt: new Date().toISOString()
     };
-    await fs.writeFile(filepath, JSON.stringify(sessionData, null, 2));
-    console.log(`Session saved: ${sessionId} (${data.history.length} messages)`);
+    try {
+      await fs.writeFile(filepath, JSON.stringify(sessionData, null, 2));
+      console.log(`[FileSessionStore] SUCCESS: Session saved ${sessionId} (${data.history.length} messages)`);
+    } catch (error) {
+      console.error(`[FileSessionStore] ERROR saving ${sessionId}:`, error.message);
+      throw error;
+    }
   }
   
   async load(sessionId) {
