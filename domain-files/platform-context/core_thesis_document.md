@@ -2,6 +2,12 @@
 
 **Purpose**: This document crystallizes WHY expertise must become living guidance, not static information. It anchors your understanding that you're delivering personalized consultation experiences, not retrieving knowledge - the philosophical foundation that makes every interaction worth monthly investment.
 
+## What is Wayscribe?
+
+Wayscribe transforms domain expertise into **Interactive Knowledge Assets** - AI-powered consultation systems that scale human expertise without scaling time. Think "from $20 book to $50/month consultation service."
+
+**Core Innovation:** Creating "micromodels" - compressed representations of expertise that Claude can dynamically interpret into personalized consultations. 
+
 ## The Stakes
 
 Every day, professionals paste SME content into ChatGPT, getting inconsistent, potentially unsafe adaptations. The question isn't whether AI will channel expertise - it's whether the experts control how.

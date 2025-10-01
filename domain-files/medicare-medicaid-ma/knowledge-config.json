@@ -36,6 +36,24 @@
       "name": "Medicare Preventive Services Guide",
       "hint": "Covered preventive care services, screenings, and wellness visits",
       "tag": "preventive services coverage"
+    },
+    {
+      "file": "ACA-1-0325.md",
+      "name": "MassHealth Member Booklet 2025",
+      "hint": "Complete MassHealth coverage types, eligibility rules, and application processes",
+      "tag": "MassHealth coverage guide"
+    },
+    {
+      "file": "OC-FactsFeatures.md",
+      "name": "One Care Facts & Features",
+      "hint": "Dual eligible coordination for those with both MassHealth and Medicare",
+      "tag": "dual eligible integration"
+    },
+    {
+      "file": "DG-FPL_2025-03.md",
+      "name": "2025 MassHealth Income Standards",
+      "hint": "Federal poverty level tables and income thresholds for all MassHealth programs",
+      "tag": "income eligibility tables"
     }
   ],
   "instructions": [

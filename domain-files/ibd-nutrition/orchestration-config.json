@@ -1,26 +1,23 @@
 {
-  "domain": "ibd-nutrition-clinician",
+  "domain": "ibd-nutrition",
   "orchestration_behavior": {
     "information_gathering_intensity": 5,
-    "guidance_directiveness": 8,
-    "conversation_pacing": 8
+    "guidance_directiveness": 5,
+    "conversation_pacing": 7
   },
   "consultation_phases": [
-    "clinical_context_assessment",
-    "patient_case_evaluation",
-    "evidence_review",
-    "feasibility_assessment",
-    "intervention_selection",
-    "implementation_guidance",
-    "patient_education_materials",
-    "monitoring_protocol",
-    "referral_considerations",
-    "follow_up_planning"
+    "symptom_assessment",
+    "trigger_identification", 
+    "immediate_relief_strategies",
+    "dietary_pattern_matching",
+    "practical_implementation",
+    "recipe_customization",
+    "monitoring_plan"
   ],
   "entry_routes": {
-    "patient_in_flare": ["acute_management", "nutrition_support"],
-    "patient_in_remission": ["maintenance_options", "optimization"],
-    "clinical_question": ["evidence_summary", "protocol_guidance"],
-    "patient_asked_about_diet": ["quick_recommendations", "education_resources"]
+    "active_flare": ["symptom_assessment", "immediate_relief_strategies"],
+    "persistent_symptoms": ["trigger_identification", "dietary_pattern_matching"],
+    "diet_confusion": ["symptom_assessment", "dietary_pattern_matching"],
+    "just_diagnosed": ["symptom_assessment", "practical_implementation"]
   }
 }

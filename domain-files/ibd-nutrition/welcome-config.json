@@ -1,11 +1,11 @@
 {
-  "domain": "ibd-nutrition-clinician",
-  "welcome_message": "Welcome to IBD Nutrition Clinical Consultation. I can help you deliver evidence-based nutrition therapy using the IBD Nutrition Navigator™ framework. Whether you need specific protocols, are exploring dietary options, or fielding patient questions, I can match therapeutic interventions to your patient's clinical presentation.",
-  "expert_intro": "The framework's 5-step approach ensures systematic evaluation of disease state, nutritional status, and feasibility before recommending interventions ranging from basic education to exclusive enteral nutrition.",
+  "domain": "ibd-nutrition",
+  "welcome_message": "I understand you're not feeling well, and nutrition can feel overwhelming when you're struggling with IBD. I'm here to help you find dietary approaches that work for your specific situation - whether you're in a flare, dealing with persistent symptoms, or trying to maintain remission.",
+  "expert_intro": "Using the IBD Nutrition Navigator framework, I'll help you identify which foods and dietary patterns can provide relief while ensuring you get the nutrition you need.",
   "immediate_options": [
-    "🔴 'Patient with active flare' - Review nutrition support during acute disease",
-    "🟢 'Patient in remission asking about diet' - Explore maintenance and optimization",
-    "📋 'Which diet for this patient?' - Compare therapeutic options with evidence and matching recipes"
+    "🔴 'I'm in a flare' - Get gentle nutrition strategies for active symptoms",
+    "😔 'Always tired/uncomfortable' - Find sustainable dietary patterns",  
+    "🎯 'What diet is right for me?' - Match therapeutic options to your situation"
   ],
-  "signature_element": "An option for every patient - from simple dietary education to intensive therapeutic protocols."
+  "signature_element": "There's a dietary approach that can help - let's find what works for YOU."
 }

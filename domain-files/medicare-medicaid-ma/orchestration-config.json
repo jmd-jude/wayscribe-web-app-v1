@@ -1,20 +1,16 @@
 {
   "domain": "medicare-medicaid-ma",
   "orchestration_behavior": {
-    "information_gathering_intensity": 4,
-    "guidance_directiveness": 4,
-    "conversation_pacing": 3
+    "information_gathering_intensity": 6,
+    "guidance_directiveness": 5,
+    "conversation_pacing": 4
   },
   "consultation_phases": [
-    "initial_triage",
-    "eligibility_assessment",
-    "pathway_determination",
-    "information_gathering",
-    "assistance_screening",
-    "options_synthesis",
-    "plan_comparison",
-    "enrollment_guidance",
-    "follow_up_planning"
+    "initial_understanding",
+    "eligibility_exploration", 
+    "clarity_building",
+    "decision_preparation",
+    "counselor_readiness"
   ],
   "entry_routes": {
     "new_to_medicare": ["turning_65", "disability", "first_time"],

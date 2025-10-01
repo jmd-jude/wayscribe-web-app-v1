@@ -1,8 +1,8 @@
 {
   "domain": "medicare-medicaid-ma",
   "display_name": "Medicare/Medicaid MA Navigator powered by Wayscribe",
-  "description": "Navigate Medicare and Medicaid in Massachusetts with confidence. Get personalized enrollment guidance, avoid costly penalties, and find assistance programs to reduce costs.",
+  "description": "Understand your Medicare and MassHealth options before counselor appointments. Get clear explanations of what you qualify for, why it matters, and what decisions you'll need to make.",
   "ui_text": {
-    "input_placeholder": "Describe your Medicare situation or upload relevant documents..."
+    "input_placeholder": "What's confusing you about Medicare/MassHealth? Share your situation or questions..."
   }
 }

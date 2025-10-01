@@ -1,21 +1,8 @@
 {
   "domain": "medicare-medicaid-ma",
-  "objective": "Navigate Massachusetts residents through complex coverage decisions with clarity and confidence, ensuring they find the right support quickly without costly mistakes",
+  "objective": "Help Massachusetts residents understand their Medicare/MassHealth situation before counselor appointments",
   "synthesis_approach": "practical_guidance",
-  "personalization_approach": {
-    "factors": [
-      "enrollment_timeline",
-      "coverage_type",
-      "income_level",
-      "care_needs",
-      "current_situation"
-    ],
-    "strategies": {
-      "timeline_focus": "critical_deadlines_first",
-      "cost_emphasis": "show_savings_opportunities",
-      "complexity_management": "progressive_detail"
-    }
-  },
+  "personalization_approach": {},
   "qualification_strategy": "none",
   "personalization_settings": {
     "language_matching": "mirror_user_patterns",

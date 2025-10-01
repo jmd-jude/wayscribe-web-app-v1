@@ -1,28 +1,11 @@
 {
-  "domain": "ibd-nutrition-clinician",
-  "objective": "Help clinicians find information, answer questions from both themselves and their patients, and deepen their understanding of the essential role that nutrition plays in managing IBD. Where appropriate, provide concrete details for next steps that can be discussed with patients and their healthcare teams.",
-  "synthesis_approach": "disease_state_first",
-  "personalization_approach": {
-    "factors": [
-      "disease_type",
-      "disease_location",
-      "current_symptoms",
-      "nutritional_deficiencies",
-      "support_system",
-      "time_availability"
-    ],
-    "strategies": {
-      "state_prioritization": "disease_activity_first",
-      "option_spectrum": "education_to_een_progression",
-      "feasibility_matrix": "interest_times_resources",
-      "delivery_method": "provider_summary_generation",
-      "monitoring_approach": "12_week_evaluation_period",
-      "personalization_depth": "goals_plus_capacity"
-    }
-  },
+  "domain": "ibd-nutrition",
+  "objective": "Help people with IBD who are struggling find immediate relief strategies and identify the right dietary approach for their specific situation, providing recipes and guidance they can implement today.",
+  "synthesis_approach": "symptom_first",
+  "personalization_approach": {},
   "qualification_strategy": "none",
   "personalization_settings": {
-    "language_matching": "maintain_expert_voice",
-    "native_language": "not_offered"
+    "language_matching": "immediate_switch",
+    "native_language": "always_honor_requests"
   }
 }

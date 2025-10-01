@@ -1,36 +1,24 @@
 {
-  "domain": "ibd-nutrition-clinician",
+  "domain": "ibd-nutrition",
   "output_format": "markdown",
   "artifact_types": [
     {
       "file": "recipe-collection.md",
       "name": "Personalized Recipe Collection",
-      "hint": "Curated recipes matching therapeutic diet, phase, and patient restrictions",
+      "hint": "Curated recipes matching your dietary needs and current symptoms",
       "tag": "recipe collection"
     },
     {
-      "file": "clinical-assessment.md",
-      "name": "Clinical Nutrition Assessment",
-      "hint": "Structured evaluation of patient's disease state and dietary intervention readiness",
-      "tag": "clinical assessment"
+      "file": "my-nutrition-plan.md",
+      "name": "My Nutrition Plan",
+      "hint": "Your personalized dietary approach with implementation steps",
+      "tag": "nutrition plan"
     },
     {
-      "file": "intervention-recommendation.md",
-      "name": "Dietary Intervention Recommendation",
-      "hint": "Evidence-based nutrition therapy plan with implementation timeline and monitoring",
-      "tag": "intervention plan"
-    },
-    {
-      "file": "patient-handout.md",
-      "name": "Patient Education Handout",
-      "hint": "Take-home instructions with meal ideas and clear expectations",
-      "tag": "patient handout"
-    },
-    {
-      "file": "clinical-note.md",
-      "name": "Clinical Documentation Note",
-      "hint": "EMR-ready summary of nutrition consultation and follow-up plan",
-      "tag": "EMR documentation"
+      "file": "quick-reference-guide.md",
+      "name": "Quick Reference Guide",
+      "hint": "Simple guide with foods to focus on and avoid",
+      "tag": "patient guide"
     }
   ]
 }

@@ -1,33 +1,29 @@
-# Patient Education Handout
+# Quick Reference Guide
 
-## What We're Doing
+## Your Simple Food Plan
 {{simple_diet_explanation}}
 
-## Why This Helps
+## Why These Foods Help
 {{patient_friendly_rationale}}
 
-## Getting Started
-### This Week
+## This Week's Focus
 {{immediate_steps}}
 
-### Foods to Focus On
+## Foods That Help
 {{encouraged_foods}}
 
-### Foods to Avoid
+## Foods to Avoid
 {{restricted_foods}}
 
-## Sample Meals
+## Easy Meal Ideas
 {{three_day_menu}}
 
 ## What to Expect
 - **Week 1-2:** {{early_expectations}}
 - **Week 3-4:** {{midpoint_expectations}}
-- **By Week 12:** {{outcome_expectations}}
+- **By Month 3:** {{outcome_expectations}}
 
-## Contact Your Provider If
+## See Your Doctor If
 {{warning_signs}}
-
-## Questions?
-{{follow_up_instructions}}
 
 ---END ASSET---

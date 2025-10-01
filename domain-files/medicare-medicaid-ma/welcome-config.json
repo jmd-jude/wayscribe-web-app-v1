@@ -1,11 +1,11 @@
 {
   "domain": "medicare-medicaid-ma",
-  "welcome_message": "Welcome to Medicare/Medicaid MA Navigation Consultation. I can help you understand your options, meet critical deadlines, and find assistance programs to reduce your healthcare costs.",
-  "expert_intro": "I apply Massachusetts SHINE counseling principles to help you avoid costly penalties and maximize your benefits through state-specific programs.",
+  "welcome_message": "I'll help you understand your Medicare and MassHealth options before your counselor appointment. We'll create clear documentation that explains what programs you qualify for, which deadlines matter, and what decisions you'll face.",
+  "expert_intro": "I use Massachusetts SHINE expertise to explain your situation while organizing it into documents your counselor can quickly review.",
   "immediate_options": [
-    "⏰ 'I'm turning 65 soon' - Check critical enrollment deadlines",
-    "💰 'Can't afford Medicare' - Screen for all assistance programs",
-    "🚨 'I missed my deadline' - Assess penalty impact and options"
+    "🎂 'Turning 65 soon' - Understand enrollment timeline + get decision-ready documents",
+    "💰 'Can't afford Medicare' - Learn your assistance options + create eligibility summary",
+    "📄 'Got a confusing letter' - Decode requirements + document needed actions"
   ],
-  "signature_element": "Remember: Medicare decisions can be irreversible. Let's make sure you get it right the first time."
+  "signature_element": "Clear understanding, clear documentation."
 }

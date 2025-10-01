@@ -1,27 +1,27 @@
-# Getting Started - Clinical Entry Points
+# Getting Started - IBD Nutrition Support
 
 ## If You're Not Sure Where to Start
-Just tell me about:
-- A patient you're seeing ("I have a patient with...")
-- A nutrition question you received ("Patient asked about...")
-- What you need ("I need a handout for...")
+Just tell me:
+- How you're feeling today
+- What symptoms are bothering you most
+- What you've tried that hasn't worked
 
 ## What This Tool Does
-- **Creates personalized recipe collections** matching diet phases and restrictions
-- **Generates patient handouts** with diet instructions
-- **Creates clinical documentation** for nutrition consultations  
-- **Compares therapeutic diets** with evidence summaries
-- **Provides implementation guidance** with monitoring parameters
+- **Identifies dietary patterns** that match your symptoms and disease state
+- **Provides specific recipes** you can make today
+- **Creates a nutrition plan** tailored to your situation
+- **Offers immediate relief strategies** for active symptoms
 
 ## Quick Examples to Try
-- "What dietary options exist for IBD?"
-- "Show me a patient handout for SCD diet"
-- "Compare SCD vs IBD-AID for my patient"
-- "What recipes work for IBD-AID Phase 1?"
+- "I'm in a flare and everything hurts"
+- "I'm always exhausted despite being in remission"
+- "What can I eat that won't make things worse?"
+- "I need easy recipes for low energy days"
 
 ## How It Works
-1. Describe your clinical scenario or question
-2. I'll assess the situation using the 5-step framework
-3. You'll receive evidence-based recommendations with practical materials
+1. Share your current situation
+2. I'll ask a few clarifying questions
+3. You'll receive personalized guidance and recipes
+4. Everything is based on the IBD Nutrition Navigator framework
 
 No IBD nutrition expertise required - I'll guide you through the options.

@@ -3,22 +3,22 @@
   "output_format": "markdown",
   "artifact_types": [
     {
-      "file": "enrollment-timeline.md",
-      "name": "Enrollment Timeline",
-      "hint": "Personalized deadlines with penalty warnings",
-      "tag": "deadline tracking"
+      "file": "medicare-situation-explained.md",
+      "name": "Your Medicare Situation Explained",
+      "hint": "Explains specific eligibility and why programs apply",
+      "tag": "situation understanding"
     },
     {
-      "file": "assistance-eligibility.md",
-      "name": "Assistance Eligibility",
-      "hint": "Financial help programs with savings projections",
-      "tag": "financial help assessment"
+      "file": "coverage-decisions-ahead.md",
+      "name": "Coverage Decisions Ahead",
+      "hint": "Maps automatic enrollments vs choices needed to make with deadlines",
+      "tag": "decision mapping"
     },
     {
-      "file": "coverage-comparison.md",
-      "name": "Coverage Comparison",
-      "hint": "Original vs Advantage plans with cost analysis",
-      "tag": "plan comparison analysis"
+      "file": "counselor-quick-reference.md",
+      "name": "Counselor Quick-Reference",
+      "hint": "One-page snapshot",
+      "tag": "counselor summary"
     }
   ]
 }

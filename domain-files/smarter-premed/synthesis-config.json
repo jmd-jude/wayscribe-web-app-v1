@@ -4,7 +4,8 @@
   "synthesis_approach": "",
   "personalization_approach": {},
   "qualification_strategy": "none",
-  "personalization_settings": {},
+  "personalization_settings": {
     "language_matching": "maintain_expert_voice",
     "native_language": "not_offered"
+  }
 }

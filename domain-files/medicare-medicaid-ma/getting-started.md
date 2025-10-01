@@ -1,26 +1,27 @@
-# Getting Started - Where to Begin
-
-## If You're Not Sure What to Ask
-Just tell me about:
-- Your situation ("I'm turning 65..." or "I lost my job coverage...")
-- What's worrying you ("I can't afford Medicare..." or "I missed a deadline...")
-- What you need help with ("Choosing a plan..." or "Finding financial help...")
+# Getting Started - Understand Your Medicare Options
 
 ## What This Tool Does
-- **Creates enrollment timelines** with your specific deadlines and penalties
-- **Screens for financial assistance** across all Massachusetts programs
-- **Compares coverage options** with real dollar impacts
-- **Provides step-by-step guidance** through complex decisions
+Helps you understand your Medicare/MassHealth options before meeting with:
+- SHINE counselors
+- Social workers  
+- Case managers
+- MassHealth representatives
+- Volunteer Advocates
 
-## Quick Examples to Try
+## Just Tell Me
+- Your situation 
+- Your biggest worry 
+- When your appointment is
+
+## What You'll Get
+- **Your Medicare Situation Explained** - Clear explanation of your eligibility
+- **Coverage Decisions Ahead** - Choices you need to make
+- **Counselor Quick-Reference** - Summary for efficient appointment
+
+## Examples
 - "I'm turning 65 next month"
-- "I can't afford my medications"
-- "What's the difference between Medicare plans?"
-- "I think I missed my enrollment deadline"
+- "I can't afford my Medicare costs"
+- "I got a letter I don't understand"
+- "My employer coverage is ending"
 
-## How It Works
-1. Share your situation or concern
-2. I'll identify critical deadlines and options
-3. You'll receive personalized guidance for Massachusetts
-
-No Medicare knowledge required - I'll guide you through everything step by step.
+Understanding your options makes counselor appointments more productive.

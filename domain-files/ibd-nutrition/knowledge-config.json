@@ -1,5 +1,5 @@
 {
-  "domain": "ibd-nutrition-clinician",
+  "domain": "ibd-nutrition",
   "knowledge_files": [
     {
       "file": "ibd-nutrition-navigator.md",
@@ -35,8 +35,8 @@
   "instructions": [
     {
       "file": "ibd-nutrition-system-instructions.md",
-      "name": "Clinical Consultation Approach",
-      "hint": "How to guide clinicians through nutrition therapy selection",
+      "name": "Patient Consultation Approach",
+      "hint": "How to guide individuals through finding dietary relief for IBD",
       "tag": "consultation approach"
     }
   ]

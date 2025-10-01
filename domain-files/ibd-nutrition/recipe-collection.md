@@ -3,7 +3,7 @@
 ## Selected Diet Protocol
 {{therapeutic_diet_and_phase}}
 
-## Patient Dietary Restrictions
+## Your Dietary Restrictions
 {{active_restrictions}}
 
 ## Starter Recipes

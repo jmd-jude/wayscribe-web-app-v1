@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator - Nutritional Therapy for IBD</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Top utility bar */
+        .top-bar {
+            background: #94c83d;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .top-bar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .top-bar a:hover {
+            opacity: 0.9;
+        }
+        
+        /* Main header */
+        .header {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo-main {
+            color: #94c83d;
+            font-size: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logo-sub {
+            color: #94c83d;
+            font-size: 18px;
+            font-style: italic;
+            font-family: Georgia, serif;
+        }
+        
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-list a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-list a:hover {
+            color: #94c83d;
+        }
+        
+        .nav-list a.active {
+            color: #94c83d;
+        }
+        
+        .nav-list a::after {
+            content: '▼';
+            font-size: 10px;
+            margin-left: 5px;
+            opacity: 0.5;
+        }
+        
+        .explore-btn {
+            background: #94c83d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .explore-btn:hover {
+            background: #85b435;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 200px;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                            url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><rect fill="%2394c83d" width="1200" height="300" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        /* Main Content Area */
+        .main-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        /* Content wrapper */
+        .content-wrapper {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        /* Info Bar */
+        .info-bar {
+            background: #f8f9fa;
+            padding: 15px 25px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .info-text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #94c83d;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Iframe Container */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            background: #fafafa;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Features Section */
+        .features {
+            background: #f9f9f9;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+        
+        .features h3 {
+            text-align: center;
+            color: #d6497e;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(148, 200, 61, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+        
+        .feature h4 {
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #333;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: #94c83d;
+            text-decoration: none;
+        }
+        
+        /* Loading Overlay */
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: opacity 0.3s;
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #94c83d;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Utility Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <a href="#">Research ▼</a>
+            <a href="#">News & Events ▼</a>
+            <a href="#">About ▼</a>
+            <a href="#">Subscribe</a>
+            <a href="#">Donate</a>
+            <a href="#">Log In</a>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-main">Nutritional Therapy</span>
+                <span class="logo-sub">for IBD</span>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#">Nutritional Therapy</a></li>
+                    <li><a href="#">Patients & Families</a></li>
+                    <li><a href="#" class="active">Consultation</a></li>
+                    <li><a href="#">Healthcare Professionals</a></li>
+                </ul>
+                <a href="#" class="explore-btn">Explore Recipes</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container" style="margin-top: 30px;">
+        <!-- Wayscribe Integration -->
+        <div class="content-wrapper">
+            <!-- Info Bar -->
+            <div class="info-bar">
+                <div class="info-text">
+                    <span class="status-indicator"></span>
+                    <span>Ready</span>
+                </div>
+                <div class="info-text">
+                    <span>Evidence-Based NTFIBD Protocols</span>
+                </div>
+            </div>
+            
+            <!-- Iframe Container -->
+            <div class="iframe-container">
+                <div class="loading-overlay" id="loadingOverlay">
+                    <div class="loading-spinner"></div>
+                </div>
+                <iframe 
+                    src="http://localhost:5173" 
+                    title="IBD Nutrition Navigator"
+                    onload="document.getElementById('loadingOverlay').classList.add('hidden')"
+                ></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h3>Available Now - No Waiting, No Referral</h3>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">📋</div>
+                <h4>Instant Guidance</h4>
+                <p>Get NTFIBD's clinical protocols in minutes instead of waiting weeks for an appointment. Tell us about your situation and get your personalized nutrition plan right now.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h4>Smart Recipe Matching</h4>
+                <p>Not random internet recipes. NTFIBD's library cross-indexed by therapeutic diet (SCD, IBD-AID, CDED), phase (flare vs remission), restrictions (dairy-free, Low-FODMAP), and prep time. Ask for "quick breakfast for active Crohn's" and get exactly what's safe for you TODAY.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h4>Expert Methodology</h4>
+                <p>The exact IBD Nutrition Navigator framework used by specialists - not generic diet advice. Your symptoms analyzed, your situation understood, your personalized plan created.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Nutritional Therapy for IBD. All rights reserved. | Conversational Interface powered by <a href="#">Wayscribe</a></p>
+    </footer>
+
+    <script>
+        console.log('NTFIBD Demo Page Loaded - Wayscribe Integration Active');
+        
+        window.addEventListener('message', function(e) {
+            if (e.origin === 'http://localhost:5173') {
+                console.log('Message from Wayscribe:', e.data);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "domain": "ibd-nutrition-clinician",
+  "domain": "ibd-nutrition",
   
   "consultation": {
     "entry_context": "string",
@@ -9,12 +9,11 @@
   },
   
   "user": {
-    "type": "clinician",
+    "type": "patient",
     "key_data": {
-      "role": "string",
-      "ibd_experience": "string",
-      "nutrition_comfort": "string",
-      "typical_patient_volume": "number"
+      "disease_type": "string",
+      "current_state": "string",
+      "main_symptoms": []
     }
   },
   
@@ -25,20 +24,15 @@
   },
   
   "domain_tracking": {
-    "current_patient": {
-      "disease_type": "string",
-      "disease_state": "string",
-      "intervention_selected": "string",
-      "available_labs": {
-        "crp": "number",
-        "calprotectin": "number",
-        "nutritional_markers": {}
-      }
+    "symptom_status": {
+      "pain_level": "string",
+      "energy_level": "string",
+      "bowel_patterns": "string"
     },
-    "clinician_growth": {
-      "topics_explored": [],
-      "confidence_areas": []
-    },
-    "referral_resources": "string"
+    "dietary_progress": {
+      "current_approach": "string",
+      "foods_identified": [],
+      "confidence_level": "string"
+    }
   }
 }

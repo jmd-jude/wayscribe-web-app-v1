@@ -1,41 +1,23 @@
 {
   "domain": "medicare-medicaid-ma",
-  
   "consultation": {
     "entry_context": "string",
     "current_phase": "string",
     "sessions": 0,
     "last_active": "timestamp"
   },
-  
   "user": {
     "type": "beneficiary",
-    "key_data": {
-      "age": "number",
-      "eligibility_trigger": "string",
-      "monthly_income": "number",
-      "current_coverage": []
-    }
+    "key_data": {}
   },
-  
   "progress": {
     "deliverables": [],
     "milestones_reached": [],
     "objective_progress": 0
   },
-  
   "domain_tracking": {
-    "enrollment_status": "string",
-    "critical_deadlines": {
-      "iep_end": "date",
-      "sep_reason": "string"
-    },
-    "assistance_eligibility": {
-      "msp_qualified": "boolean",
-      "extra_help_qualified": "boolean",
-      "estimated_savings": "number"
-    },
-    "coverage_decision": "string",
-    "crisis_level": "string"
+    "appointment_scheduled": "boolean",
+    "counselor_type": "string",
+    "concepts_explained": []
   }
 }

@@ -1,9 +1,9 @@
 {
-  "domain": "ibd-nutrition-clinician",
+  "domain": "ibd-nutrition",
   "activation_pattern": "discovery-first",
   "consultation_unlocks": {
     "required": [],
-    "discovers": ["clinician_context", "disease_type", "disease_state", "current_symptoms", "nutrition_goals", "feasibility_factors"],
-    "accelerators": ["specific_patient_case", "clinical_question", "time_for_discussion", "referral_resources"]
+    "discovers": ["current_symptoms", "disease_type", "failed_attempts", "dietary_restrictions", "energy_levels", "main_triggers"],
+    "accelerators": ["recent_labs", "current_medications", "time_since_diagnosis"]
   }
 }

@@ -3,7 +3,7 @@
   "activation_pattern": "discovery-first",
   "consultation_unlocks": {
     "required": [],
-    "discovers": ["enrollment_timeline", "eligibility_trigger", "coverage_gaps", "financial_situation", "deadline_urgency", "current_coverage"],
-    "accelerators": ["income_verification", "current_insurance_cards", "prescription_list", "ssa_award_letter"]
+    "discovers": ["coverage_gaps", "understanding_level"],
+    "accelerators": []
   }
 }
