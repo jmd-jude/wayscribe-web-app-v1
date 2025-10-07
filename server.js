@@ -7,7 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import multer from 'multer';
 import fs from 'fs/promises';
-import { FileSessionStore } from './persistence/FileSessionStore.js';
+import { FileSessionStore, PostgresSessionStore } from './persistence/PostgresSessionStore.js';
 
 // Load environment variables
 dotenv.config();
@@ -95,7 +95,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Session storage (file-based)
-const sessionStore = new FileSessionStore();
+const sessionStore = new PostgresSessionStore();
 
 // Cleanup old sessions hourly
 setInterval(async () => {
@@ -451,8 +451,9 @@ app.get('/api/session/:sessionId/info', async (req, res) => {
 });
 
 // Graceful shutdown
-process.on('SIGTERM', () => {
+process.on('SIGTERM', async () => {
   console.log('SIGTERM received, closing server...');
+  await sessionStore.close();
   server.close(() => {
     console.log('Server closed');
     process.exit(0);
