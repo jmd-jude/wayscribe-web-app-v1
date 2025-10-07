@@ -435,6 +435,46 @@ app.get('/health', async (req, res) => {
   });
 });
 
+// Export all sessions endpoint
+app.get('/api/export-sessions', async (req, res) => {
+  try {
+    const sessions = await sessionStore.getAllSessions();
+    
+    // Return as JSON with proper headers
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Disposition', 'attachment; filename=sessions-export.json');
+    res.json(sessions);
+  } catch (error) {
+    console.error('Error exporting sessions:', error);
+    res.status(500).json({ error: 'Failed to export sessions' });
+  }
+});
+
+// Optional: Export as CSV format (easier for spreadsheets)
+app.get('/api/export-sessions/csv', async (req, res) => {
+  try {
+    const sessions = await sessionStore.getAllSessions();
+    
+    // Create CSV header
+    let csv = 'Session ID,Domain,Created At,Last Activity,Message Count,Conversation JSON\n';
+    
+    // Add each session as a row
+    sessions.forEach(session => {
+      const messageCount = session.history ? session.history.length : 0;
+      const conversationJson = JSON.stringify(session.history || []).replace(/"/g, '""'); // Escape quotes
+      
+      csv += `"${session.id}","${session.domain || ''}","${session.createdAt || ''}","${session.lastActivity || ''}",${messageCount},"${conversationJson}"\n`;
+    });
+    
+    res.setHeader('Content-Type', 'text/csv');
+    res.setHeader('Content-Disposition', 'attachment; filename=sessions-export.csv');
+    res.send(csv);
+  } catch (error) {
+    console.error('Error exporting sessions as CSV:', error);
+    res.status(500).json({ error: 'Failed to export sessions as CSV' });
+  }
+});
+
 // Session info endpoint (for debugging)
 app.get('/api/session/:sessionId/info', async (req, res) => {
   const session = await sessionStore.load(req.params.sessionId);
