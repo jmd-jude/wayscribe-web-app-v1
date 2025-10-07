@@ -475,7 +475,7 @@ app.get('/api/export-sessions/csv', async (req, res) => {
   }
 });
 
-// Session info endpoint (for debugging)
+// Session info endpoint
 app.get('/api/session/:sessionId/info', async (req, res) => {
   const session = await sessionStore.load(req.params.sessionId);
   if (!session) {
