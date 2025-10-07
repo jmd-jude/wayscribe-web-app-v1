@@ -7,7 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import multer from 'multer';
 import fs from 'fs/promises';
-import { FileSessionStore, PostgresSessionStore } from './persistence/PostgresSessionStore.js';
+import { PostgresSessionStore } from './persistence/PostgresSessionStore.js';
 
 // Load environment variables
 dotenv.config();
